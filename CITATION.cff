@@ -20,3 +20,6 @@ keywords:
   - sparse displacement
   - formal verification
   - reproducible research
+doi: "10.5281/zenodo.23475920"
+url: "https://github.com/LeonardSEO/exact-sparse-gram"
+repository-code: "https://github.com/LeonardSEO/exact-sparse-gram"

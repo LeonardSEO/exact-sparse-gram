@@ -5,6 +5,7 @@ output—and a measured structured regime in which it beats vendor BLAS.**
 
 Leonard van Hemert · Version 1.0.0 · 19 October 2026
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23475920.svg)](https://doi.org/10.5281/zenodo.23475920)
 [![Verify research artifact](https://github.com/LeonardSEO/exact-sparse-gram/actions/workflows/verify.yml/badge.svg)](https://github.com/LeonardSEO/exact-sparse-gram/actions/workflows/verify.yml)
 
 [Paper](paper.pdf) · [Paper source](paper.tex) · [Proof and trust boundaries](docs/LEAN_VERIFICATION.md) · [Reproducibility](docs/PROVENANCE.md) · [Claim–evidence map](CLAIM_EVIDENCE.md)
@@ -178,3 +179,14 @@ Use [CITATION.cff](CITATION.cff) to cite version 1.0.0. Source code, scripts and
 proofs are [MIT licensed](LICENSE). The paper, documentation and data are licensed
 under [Creative Commons Attribution 4.0](LICENSES/CC-BY-4.0.txt). External dependencies
 retain their own licenses and are fetched separately. See [license scope](LICENSES/README.md).
+
+## Published artifact
+
+**Version DOI: [10.5281/zenodo.23475920](https://doi.org/10.5281/zenodo.23475920)**.
+[GitHub release v1.0.0](https://github.com/LeonardSEO/exact-sparse-gram/releases/tag/v1.0.0)
+freezes commit `b52224b446e2b5f164791e2556774bc279b61927`. The published Zenodo
+ZIP contains all 150 released files, checked byte for byte against that commit,
+including the paper, Lean project, implementation and evidence.
+The concept DOI is `10.5281/zenodo.23475919`; use the version DOI above to cite this release.
+These DOI and publication receipts were added after publication; the frozen tag
+and archived files remain unchanged. [Publication verification](docs/PUBLICATION.md).

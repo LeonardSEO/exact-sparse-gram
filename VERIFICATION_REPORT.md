@@ -53,3 +53,5 @@ inspection of the plot and formalization/comparator tables. No unresolved
 references, citations, missing characters or overfull boxes remain. Two underfull
 line-spacing warnings in the Lean table are benign. See
 `evidence/validation/manuscript.json` and `evidence/latex-build.log`.
+
+Publication completed: GitHub release `v1.0.0`, frozen commit `b52224b446e2b5f164791e2556774bc279b61927`, and published version DOI [10.5281/zenodo.23475920](https://doi.org/10.5281/zenodo.23475920). Hosted CI passed all three jobs. The downloaded Zenodo ZIP matches all 150 frozen files and its displayed checksum; [publication verification](docs/PUBLICATION.md) records the immutable version and subsequent citation metadata update.

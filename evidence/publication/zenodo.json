@@ -1,0 +1,40 @@
+{
+  "verified_utc": "2026-10-19T13:35:33.053942+00:00",
+  "state": "published",
+  "version": "1.0.0",
+  "doi": "10.5281/zenodo.23475920",
+  "concept_doi": "10.5281/zenodo.23475919",
+  "record": "https://zenodo.org/records/23475920",
+  "doi_resolution_observed_in_Brave": "https://zenodo.org/records/23475920",
+  "repository": "https://github.com/LeonardSEO/exact-sparse-gram",
+  "release": "https://github.com/LeonardSEO/exact-sparse-gram/releases/tag/v1.0.0",
+  "tag": "v1.0.0",
+  "frozen_commit": "b52224b446e2b5f164791e2556774bc279b61927",
+  "archive_name": "LeonardSEO/exact-sparse-gram-v1.0.0.zip",
+  "archive_bytes": 974708,
+  "archive_md5": "f5d7fd6ca1d0c562f134645fb3a5cf16",
+  "archive_sha256": "bb1922e6c2c78434b53d7fb2a3cb14abf041826acc283a4caf9bf5659a70a43c",
+  "files_verified_against_frozen_git_commit": 150,
+  "manifest_entries_verified": 149,
+  "metadata_verified_in_public_record": [
+    "exact title",
+    "van Hemert, Leonard",
+    "version1.0.0",
+    "publishedOctober19,2026",
+    "open software",
+    "CCBY4 umbrella with explicit MIT code/Lean description",
+    "GitHubtagv1.0.0 relationship"
+  ],
+  "hosted_ci": {
+    "run": 39258326592,
+    "url": "https://github.com/LeonardSEO/exact-sparse-gram/actions/runs/39258326592",
+    "commit": "b52224b446e2b5f164791e2556774bc279b61927",
+    "result": "success",
+    "jobs": [
+      "portable-and-data",
+      "lean",
+      "manuscript"
+    ]
+  },
+  "note": "DOI citation additions follow publication in a separate commit; frozen tag and archived contents are preserved."
+}
