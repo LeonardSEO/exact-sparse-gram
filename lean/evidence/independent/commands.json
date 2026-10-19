@@ -1,0 +1,40 @@
+[
+  {
+    "command": [
+      "lean",
+      "--version"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.35706281661987305,
+    "output": "lean-version.txt"
+  },
+  {
+    "command": [
+      "lake",
+      "--version"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.07657122611999512,
+    "output": "lake-version.txt"
+  },
+  {
+    "command": [
+      "lake",
+      "build"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 15.625067949295044,
+    "output": "build.log"
+  },
+  {
+    "command": [
+      "lake",
+      "env",
+      "lean",
+      "evidence/Inspect.lean"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 4.516142845153809,
+    "output": "types-and-axioms.txt"
+  }
+]

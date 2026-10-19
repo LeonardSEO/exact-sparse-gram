@@ -1,0 +1,2 @@
+PASS: 47 byte-preserved sources, data, and historical receipts; frozen kernel hash matches.
+{"status": "all sequential exact comparisons and rejection checks passed", "source_sha256": "7550990a7f6dd82fbd0e58580c9a6639eef7ffc07d841b56ae9cf189b394bde5", "entries_per_implementation": 2044, "timing": "none: correctness only; no timers or vendor calls"}

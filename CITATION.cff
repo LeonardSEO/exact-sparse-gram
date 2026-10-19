@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "Please cite this research artifact if you use its paper, proof, implementation or data."
+type: software
+title: "Exact Gram Matrices from Sparse Row Shifts by Sequential Factor Replacement"
+authors:
+  - family-names: "van Hemert"
+    given-names: "Leonard"
+version: "1.0.0"
+date-released: "2026-10-19"
+license:
+  - MIT
+  - CC-BY-4.0
+abstract: >-
+  A sequential sparse factor-replacement schedule with an exact binary64
+  intermediate invariant, a validated C implementation, Lean formalization,
+  independent integer-oracle checks and all 230 frozen six-method comparisons.
+keywords:
+  - Gram matrix
+  - exact floating-point arithmetic
+  - sparse displacement
+  - formal verification
+  - reproducible research

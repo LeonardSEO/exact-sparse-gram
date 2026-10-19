@@ -1,0 +1,81 @@
+{
+  "isolated_copy": "/var/folders/wv/0cp27z9s525b3y5wtz9v4m080000gn/T/gram-release-clean-audit-y39r8bgu/release",
+  "excluded": "git, all .lake, builds, bytecode, native objects/libraries",
+  "steps": [
+    {
+      "command": [
+        "sh",
+        "scripts/build.sh"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.4143998622894287,
+      "log": "evidence/validation/independent_clean/00.log"
+    },
+    {
+      "command": [
+        "sh",
+        "scripts/test.sh"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.9114480018615723,
+      "log": "evidence/validation/independent_clean/01.log"
+    },
+    {
+      "command": [
+        "python3",
+        "analysis/reproduce.py"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 6.831618070602417,
+      "log": "evidence/validation/independent_clean/02.log"
+    },
+    {
+      "command": [
+        "cmp",
+        "analysis/generated/lattice_summary.csv",
+        "evidence/original/results/lattice_summary.csv"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.005634784698486328,
+      "log": "evidence/validation/independent_clean/03.log"
+    },
+    {
+      "command": [
+        "python3",
+        "benchmarks/specialized/summarize.py",
+        "data/specialized_2026-10-19/specialized_raw.jsonl",
+        "--manifest",
+        "data/specialized_2026-10-19/frozen.json",
+        "--environment",
+        "data/specialized_2026-10-19/specialized_environment.json",
+        "--integrity-report",
+        "specialized-integrity-replay.json",
+        "--output",
+        "specialized-summary-replay.csv"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 1.4884798526763916,
+      "log": "evidence/validation/independent_clean/04.log"
+    },
+    {
+      "command": [
+        "cmp",
+        "specialized-summary-replay.csv",
+        "data/specialized_2026-10-19/summary.csv"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.0031228065490722656,
+      "log": "evidence/validation/independent_clean/05.log"
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/check_lean_axioms.py",
+        "lean/evidence/independent/types-and-axioms.txt"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.04618430137634277,
+      "log": "evidence/validation/independent_clean/06.log"
+    }
+  ]
+}

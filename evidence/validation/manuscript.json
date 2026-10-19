@@ -1,0 +1,13 @@
+{
+  "checked_utc": "2026-10-19T13:13:23.912063+00:00",
+  "pages": 8,
+  "tex_compiler": "Tectonic 0.17.0, official TeX resource cache",
+  "pdf_sha256": "13e6e40406517f1e105051409d18053c9887eb66360d7d87a47dd6dc1b393b70",
+  "checks": [
+    "BibTeX no errors",
+    "all references and citations resolved",
+    "no overfull boxes or missing characters",
+    "all eight pages rendered and visually inspected; pages6/7 enlarged for tables and figure"
+  ],
+  "remaining_warnings": "two underfull hboxes in Lean declaration table, visually usable"
+}

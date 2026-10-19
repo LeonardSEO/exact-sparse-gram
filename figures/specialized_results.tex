@@ -1,0 +1,16 @@
+\begin{table}[h]
+\centering\footnotesize\setlength{\tabcolsep}{3pt}
+\begin{tabular}{llrll}
+\toprule
+Family & Coefficients & $R$ range & SYRK/seq. & H+E/seq. \\
+\midrule
+Innovations & Uniform & 229917--234577 & 1.352 [1.337,1.381] & 45.831 [44.659,46.299] \\
+Innovations & Near constant & 213176--219293 & 1.365 [1.355,1.406] & 42.544 [42.010,43.542] \\
+Windows & Uniform & 518 & 1.575 [1.545,1.583] & 1.746 [1.729,1.757] \\
+Windows & Near constant & 518 & 1.581 [1.531,1.584] & 1.741 [1.712,1.777] \\
+\bottomrule
+\end{tabular}
+\caption{Separate new structured comparison: medians of five run-level paired ratios with observed minimum/maximum in brackets, not confidence intervals. All jobs use $512\times4096$, cap two, $e=-15$, full output. $R$ counts actual reconstructed Hankel corrections.}
+\label{tab:special}
+\end{table}
+The sequential member beats both dense vendors and this reconstructed-Hankel implementation in all 20 new runs. It is about 1.7--1.8 times faster than the latter on these corrected windows, and about 42--46 times faster on accumulated innovations. The large latter ratio reflects the growth of reconstructed corrections, not a claim against every structured method. An optimized alternative Hankel reconstruction or a different published structured implementation remains an outstanding comparison. No structured state-of-the-art claim follows.

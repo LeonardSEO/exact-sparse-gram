@@ -1,0 +1,1301 @@
+{
+  "status": "all sequential exact comparisons and rejection checks passed",
+  "source_sha256": "7550990a7f6dd82fbd0e58580c9a6639eef7ffc07d841b56ae9cf189b394bde5",
+  "verifier_sha256": "d733494227cb2407c9c5cde40653b6861da45ca9c69d90434c95e01215c7822b",
+  "original_source_sha256": "3402d7c6531fdb17178493df4205b54aaa580fcc6f6d99aa3a66cffa3e3da540",
+  "scaffold_source_sha256": "d1400c003886f0e57102e75bb7e442b7329cbad26d6d796b844b9bf877f1ba95",
+  "timing": "none: correctness only; no timers or vendor calls",
+  "reference": "direct Python integer Gram and exact Fraction scaling",
+  "implementations": [
+    "native (NEON on arm64)",
+    "forced scalar"
+  ],
+  "compiler_commands": [
+    [
+      "clang",
+      "-O3",
+      "-std=c11",
+      "-fno-fast-math",
+      "-ffp-contract=off",
+      "-Wall",
+      "-Wextra",
+      "-Wconversion",
+      "-Werror",
+      "-dynamiclib",
+      "/Users/leonard/Downloads/onderzoek_drie_problemen/gram_research/src/lattice_sequential.c",
+      "-o",
+      "/Users/leonard/Downloads/onderzoek_drie_problemen/gram_research/verification/lattice_sequential_native.dylib"
+    ],
+    [
+      "clang",
+      "-DLATTICE_SEQUENTIAL_SCALAR",
+      "-O3",
+      "-std=c11",
+      "-fno-fast-math",
+      "-ffp-contract=off",
+      "-Wall",
+      "-Wextra",
+      "-Wconversion",
+      "-Werror",
+      "-dynamiclib",
+      "/Users/leonard/Downloads/onderzoek_drie_problemen/gram_research/src/lattice_sequential.c",
+      "-o",
+      "/Users/leonard/Downloads/onderzoek_drie_problemen/gram_research/verification/lattice_sequential_scalar.dylib"
+    ]
+  ],
+  "strict_counterexample": {
+    "rows": [
+      [
+        0,
+        -67108864
+      ],
+      [
+        67108863,
+        67108864
+      ]
+    ],
+    "n": 2,
+    "q": 1,
+    "B": 67108864,
+    "exact_grouped_prefix": 18014398308155393,
+    "rounded_grouped_prefix": 18014398308155392,
+    "exact_diagonal": 9007199120523265,
+    "grouped_diagonal": 9007199120523264,
+    "sequential_first_group": 67108864,
+    "sequential_diagonal": 9007199120523265
+  },
+  "finite_invariant_certificate": {
+    "exhaustive_n2_B1_states": 6561,
+    "support_relations": 4,
+    "every_prefix_and_product_count": "passed",
+    "scope": "finite supplemental certificate; arbitrary-n proof is analytical"
+  },
+  "csr_group_certificate": {
+    "ordered_word_identity": "passed",
+    "monomials": 4,
+    "csr_group_cases": 96,
+    "csr_group_prefixes": 371,
+    "support_coordinates": {
+      "unique_left": 123,
+      "unique_right": 132,
+      "overlap": 58
+    },
+    "scope": "finite symbolic/prefix checks; arbitrary-n theorem is analytical"
+  },
+  "cases": [
+    {
+      "name": "all_vector_tails_n1",
+      "m": 7,
+      "n": 1,
+      "scale_exp": -1,
+      "max_q": 0,
+      "coefficient_cap": 94906265,
+      "entries_per_implementation": 28
+    },
+    {
+      "name": "all_vector_tails_n2",
+      "m": 7,
+      "n": 2,
+      "scale_exp": 0,
+      "max_q": 1,
+      "coefficient_cap": 67108864,
+      "entries_per_implementation": 28
+    },
+    {
+      "name": "all_vector_tails_n3",
+      "m": 7,
+      "n": 3,
+      "scale_exp": 200,
+      "max_q": 2,
+      "coefficient_cap": 54794158,
+      "entries_per_implementation": 28
+    },
+    {
+      "name": "all_vector_tails_n4",
+      "m": 7,
+      "n": 4,
+      "scale_exp": -400,
+      "max_q": 3,
+      "coefficient_cap": 47453132,
+      "entries_per_implementation": 28
+    },
+    {
+      "name": "all_vector_tails_n5",
+      "m": 7,
+      "n": 5,
+      "scale_exp": -1,
+      "max_q": 3,
+      "coefficient_cap": 42443372,
+      "entries_per_implementation": 28
+    },
+    {
+      "name": "all_vector_tails_n6",
+      "m": 7,
+      "n": 6,
+      "scale_exp": 0,
+      "max_q": 3,
+      "coefficient_cap": 38745320,
+      "entries_per_implementation": 28
+    },
+    {
+      "name": "all_vector_tails_n7",
+      "m": 7,
+      "n": 7,
+      "scale_exp": 200,
+      "max_q": 3,
+      "coefficient_cap": 35871196,
+      "entries_per_implementation": 28
+    },
+    {
+      "name": "all_vector_tails_n8",
+      "m": 7,
+      "n": 8,
+      "scale_exp": -400,
+      "max_q": 3,
+      "coefficient_cap": 33554432,
+      "entries_per_implementation": 28
+    },
+    {
+      "name": "all_vector_tails_n9",
+      "m": 7,
+      "n": 9,
+      "scale_exp": -1,
+      "max_q": 3,
+      "coefficient_cap": 31635421,
+      "entries_per_implementation": 28
+    },
+    {
+      "name": "all_vector_tails_n10",
+      "m": 7,
+      "n": 10,
+      "scale_exp": 0,
+      "max_q": 3,
+      "coefficient_cap": 30011996,
+      "entries_per_implementation": 28
+    },
+    {
+      "name": "all_vector_tails_n11",
+      "m": 7,
+      "n": 11,
+      "scale_exp": 200,
+      "max_q": 3,
+      "coefficient_cap": 28615315,
+      "entries_per_implementation": 28
+    },
+    {
+      "name": "all_vector_tails_n12",
+      "m": 7,
+      "n": 12,
+      "scale_exp": -400,
+      "max_q": 3,
+      "coefficient_cap": 27397079,
+      "entries_per_implementation": 28
+    },
+    {
+      "name": "all_vector_tails_n13",
+      "m": 7,
+      "n": 13,
+      "scale_exp": -1,
+      "max_q": 3,
+      "coefficient_cap": 26322262,
+      "entries_per_implementation": 28
+    },
+    {
+      "name": "all_vector_tails_n14",
+      "m": 7,
+      "n": 14,
+      "scale_exp": 0,
+      "max_q": 3,
+      "coefficient_cap": 25364766,
+      "entries_per_implementation": 28
+    },
+    {
+      "name": "all_vector_tails_n15",
+      "m": 7,
+      "n": 15,
+      "scale_exp": 200,
+      "max_q": 3,
+      "coefficient_cap": 24504692,
+      "entries_per_implementation": 28
+    },
+    {
+      "name": "all_vector_tails_n16",
+      "m": 7,
+      "n": 16,
+      "scale_exp": -400,
+      "max_q": 3,
+      "coefficient_cap": 23726566,
+      "entries_per_implementation": 28
+    },
+    {
+      "name": "all_vector_tails_n17",
+      "m": 7,
+      "n": 17,
+      "scale_exp": -1,
+      "max_q": 3,
+      "coefficient_cap": 23018150,
+      "entries_per_implementation": 28
+    },
+    {
+      "name": "all_vector_tails_n18",
+      "m": 7,
+      "n": 18,
+      "scale_exp": 0,
+      "max_q": 3,
+      "coefficient_cap": 22369621,
+      "entries_per_implementation": 28
+    },
+    {
+      "name": "all_vector_tails_n19",
+      "m": 7,
+      "n": 19,
+      "scale_exp": 200,
+      "max_q": 3,
+      "coefficient_cap": 21772990,
+      "entries_per_implementation": 28
+    },
+    {
+      "name": "all_vector_tails_n20",
+      "m": 7,
+      "n": 20,
+      "scale_exp": -400,
+      "max_q": 3,
+      "coefficient_cap": 21221686,
+      "entries_per_implementation": 28
+    },
+    {
+      "name": "all_vector_tails_n21",
+      "m": 7,
+      "n": 21,
+      "scale_exp": -1,
+      "max_q": 3,
+      "coefficient_cap": 20710245,
+      "entries_per_implementation": 28
+    },
+    {
+      "name": "all_vector_tails_n22",
+      "m": 7,
+      "n": 22,
+      "scale_exp": 0,
+      "max_q": 3,
+      "coefficient_cap": 20234083,
+      "entries_per_implementation": 28
+    },
+    {
+      "name": "all_vector_tails_n23",
+      "m": 7,
+      "n": 23,
+      "scale_exp": 200,
+      "max_q": 3,
+      "coefficient_cap": 19789324,
+      "entries_per_implementation": 28
+    },
+    {
+      "name": "all_vector_tails_n24",
+      "m": 7,
+      "n": 24,
+      "scale_exp": -400,
+      "max_q": 3,
+      "coefficient_cap": 19372660,
+      "entries_per_implementation": 28
+    },
+    {
+      "name": "all_vector_tails_n25",
+      "m": 7,
+      "n": 25,
+      "scale_exp": -1,
+      "max_q": 3,
+      "coefficient_cap": 18981253,
+      "entries_per_implementation": 28
+    },
+    {
+      "name": "maximal_uniform_anchor_n1",
+      "m": 1,
+      "n": 1,
+      "scale_exp": -400,
+      "max_q": 64,
+      "coefficient_cap": 94906265,
+      "entries_per_implementation": 1
+    },
+    {
+      "name": "maximal_uniform_anchor_n2",
+      "m": 1,
+      "n": 2,
+      "scale_exp": -400,
+      "max_q": 64,
+      "coefficient_cap": 67108864,
+      "entries_per_implementation": 1
+    },
+    {
+      "name": "maximal_uniform_anchor_n3",
+      "m": 1,
+      "n": 3,
+      "scale_exp": -400,
+      "max_q": 64,
+      "coefficient_cap": 54794158,
+      "entries_per_implementation": 1
+    },
+    {
+      "name": "maximal_uniform_anchor_n7",
+      "m": 1,
+      "n": 7,
+      "scale_exp": -400,
+      "max_q": 64,
+      "coefficient_cap": 35871196,
+      "entries_per_implementation": 1
+    },
+    {
+      "name": "maximal_uniform_anchor_n8",
+      "m": 1,
+      "n": 8,
+      "scale_exp": -400,
+      "max_q": 64,
+      "coefficient_cap": 33554432,
+      "entries_per_implementation": 1
+    },
+    {
+      "name": "maximal_uniform_anchor_n9",
+      "m": 1,
+      "n": 9,
+      "scale_exp": -400,
+      "max_q": 64,
+      "coefficient_cap": 31635421,
+      "entries_per_implementation": 1
+    },
+    {
+      "name": "maximal_uniform_anchor_n17",
+      "m": 1,
+      "n": 17,
+      "scale_exp": -400,
+      "max_q": 64,
+      "coefficient_cap": 23018150,
+      "entries_per_implementation": 1
+    },
+    {
+      "name": "maximal_uniform_anchor_n65",
+      "m": 1,
+      "n": 65,
+      "scale_exp": -400,
+      "max_q": 64,
+      "coefficient_cap": 11771673,
+      "entries_per_implementation": 1
+    },
+    {
+      "name": "maximal_uniform_anchor_n65536",
+      "m": 1,
+      "n": 65536,
+      "scale_exp": -400,
+      "max_q": 64,
+      "coefficient_cap": 370727,
+      "entries_per_implementation": 1
+    },
+    {
+      "name": "q0_exponent_-400",
+      "m": 9,
+      "n": 11,
+      "scale_exp": -400,
+      "max_q": 0,
+      "coefficient_cap": 28615315,
+      "entries_per_implementation": 45
+    },
+    {
+      "name": "q0_exponent_-399",
+      "m": 9,
+      "n": 11,
+      "scale_exp": -399,
+      "max_q": 0,
+      "coefficient_cap": 28615315,
+      "entries_per_implementation": 45
+    },
+    {
+      "name": "q0_exponent_-1",
+      "m": 9,
+      "n": 11,
+      "scale_exp": -1,
+      "max_q": 0,
+      "coefficient_cap": 28615315,
+      "entries_per_implementation": 45
+    },
+    {
+      "name": "q0_exponent_0",
+      "m": 9,
+      "n": 11,
+      "scale_exp": 0,
+      "max_q": 0,
+      "coefficient_cap": 28615315,
+      "entries_per_implementation": 45
+    },
+    {
+      "name": "q0_exponent_1",
+      "m": 9,
+      "n": 11,
+      "scale_exp": 1,
+      "max_q": 0,
+      "coefficient_cap": 28615315,
+      "entries_per_implementation": 45
+    },
+    {
+      "name": "q0_exponent_199",
+      "m": 9,
+      "n": 11,
+      "scale_exp": 199,
+      "max_q": 0,
+      "coefficient_cap": 28615315,
+      "entries_per_implementation": 45
+    },
+    {
+      "name": "q0_exponent_200",
+      "m": 9,
+      "n": 11,
+      "scale_exp": 200,
+      "max_q": 0,
+      "coefficient_cap": 28615315,
+      "entries_per_implementation": 45
+    },
+    {
+      "name": "strict_grouped_failure",
+      "m": 2,
+      "n": 2,
+      "scale_exp": 0,
+      "max_q": 1,
+      "coefficient_cap": 67108864,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "maximum_residual_2B",
+      "m": 2,
+      "n": 9,
+      "scale_exp": 200,
+      "max_q": 8,
+      "coefficient_cap": 31635421,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "maximum_q64",
+      "m": 4,
+      "n": 65,
+      "scale_exp": -400,
+      "max_q": 64,
+      "coefficient_cap": 11771673,
+      "entries_per_implementation": 10
+    },
+    {
+      "name": "recurrence_chain_m37",
+      "m": 37,
+      "n": 3,
+      "scale_exp": 0,
+      "max_q": 1,
+      "coefficient_cap": 54794158,
+      "entries_per_implementation": 703
+    },
+    {
+      "name": "zero_rows",
+      "m": 7,
+      "n": 9,
+      "scale_exp": -400,
+      "max_q": 0,
+      "coefficient_cap": 31635421,
+      "entries_per_implementation": 28
+    },
+    {
+      "name": "n1_signed_extremes",
+      "m": 5,
+      "n": 1,
+      "scale_exp": 200,
+      "max_q": 0,
+      "coefficient_cap": 94906265,
+      "entries_per_implementation": 15
+    },
+    {
+      "name": "single_defect_n9_k0",
+      "m": 2,
+      "n": 9,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 31635421,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n9_k1",
+      "m": 2,
+      "n": 9,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 31635421,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n9_k2",
+      "m": 2,
+      "n": 9,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 31635421,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n9_k3",
+      "m": 2,
+      "n": 9,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 31635421,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n9_k4",
+      "m": 2,
+      "n": 9,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 31635421,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n9_k5",
+      "m": 2,
+      "n": 9,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 31635421,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n9_k6",
+      "m": 2,
+      "n": 9,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 31635421,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n9_k7",
+      "m": 2,
+      "n": 9,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 31635421,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n16_k0",
+      "m": 2,
+      "n": 16,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 23726566,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n16_k1",
+      "m": 2,
+      "n": 16,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 23726566,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n16_k2",
+      "m": 2,
+      "n": 16,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 23726566,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n16_k3",
+      "m": 2,
+      "n": 16,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 23726566,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n16_k4",
+      "m": 2,
+      "n": 16,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 23726566,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n16_k5",
+      "m": 2,
+      "n": 16,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 23726566,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n16_k6",
+      "m": 2,
+      "n": 16,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 23726566,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n16_k7",
+      "m": 2,
+      "n": 16,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 23726566,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n16_k8",
+      "m": 2,
+      "n": 16,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 23726566,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n16_k9",
+      "m": 2,
+      "n": 16,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 23726566,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n16_k10",
+      "m": 2,
+      "n": 16,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 23726566,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n16_k11",
+      "m": 2,
+      "n": 16,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 23726566,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n16_k12",
+      "m": 2,
+      "n": 16,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 23726566,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n16_k13",
+      "m": 2,
+      "n": 16,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 23726566,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n16_k14",
+      "m": 2,
+      "n": 16,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 23726566,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n17_k0",
+      "m": 2,
+      "n": 17,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 23018150,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n17_k1",
+      "m": 2,
+      "n": 17,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 23018150,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n17_k2",
+      "m": 2,
+      "n": 17,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 23018150,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n17_k3",
+      "m": 2,
+      "n": 17,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 23018150,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n17_k4",
+      "m": 2,
+      "n": 17,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 23018150,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n17_k5",
+      "m": 2,
+      "n": 17,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 23018150,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n17_k6",
+      "m": 2,
+      "n": 17,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 23018150,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n17_k7",
+      "m": 2,
+      "n": 17,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 23018150,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n17_k8",
+      "m": 2,
+      "n": 17,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 23018150,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n17_k9",
+      "m": 2,
+      "n": 17,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 23018150,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n17_k10",
+      "m": 2,
+      "n": 17,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 23018150,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n17_k11",
+      "m": 2,
+      "n": 17,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 23018150,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n17_k12",
+      "m": 2,
+      "n": 17,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 23018150,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n17_k13",
+      "m": 2,
+      "n": 17,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 23018150,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n17_k14",
+      "m": 2,
+      "n": 17,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 23018150,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n17_k15",
+      "m": 2,
+      "n": 17,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 23018150,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n24_k0",
+      "m": 2,
+      "n": 24,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 19372660,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n24_k1",
+      "m": 2,
+      "n": 24,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 19372660,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n24_k2",
+      "m": 2,
+      "n": 24,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 19372660,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n24_k3",
+      "m": 2,
+      "n": 24,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 19372660,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n24_k4",
+      "m": 2,
+      "n": 24,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 19372660,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n24_k5",
+      "m": 2,
+      "n": 24,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 19372660,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n24_k6",
+      "m": 2,
+      "n": 24,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 19372660,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n24_k7",
+      "m": 2,
+      "n": 24,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 19372660,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n24_k8",
+      "m": 2,
+      "n": 24,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 19372660,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n24_k9",
+      "m": 2,
+      "n": 24,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 19372660,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n24_k10",
+      "m": 2,
+      "n": 24,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 19372660,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n24_k11",
+      "m": 2,
+      "n": 24,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 19372660,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n24_k12",
+      "m": 2,
+      "n": 24,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 19372660,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n24_k13",
+      "m": 2,
+      "n": 24,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 19372660,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n24_k14",
+      "m": 2,
+      "n": 24,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 19372660,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n24_k15",
+      "m": 2,
+      "n": 24,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 19372660,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n24_k16",
+      "m": 2,
+      "n": 24,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 19372660,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n24_k17",
+      "m": 2,
+      "n": 24,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 19372660,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n24_k18",
+      "m": 2,
+      "n": 24,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 19372660,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n24_k19",
+      "m": 2,
+      "n": 24,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 19372660,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n24_k20",
+      "m": 2,
+      "n": 24,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 19372660,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n24_k21",
+      "m": 2,
+      "n": 24,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 19372660,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n24_k22",
+      "m": 2,
+      "n": 24,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 19372660,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n25_k0",
+      "m": 2,
+      "n": 25,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 18981253,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n25_k1",
+      "m": 2,
+      "n": 25,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 18981253,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n25_k2",
+      "m": 2,
+      "n": 25,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 18981253,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n25_k3",
+      "m": 2,
+      "n": 25,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 18981253,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n25_k4",
+      "m": 2,
+      "n": 25,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 18981253,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n25_k5",
+      "m": 2,
+      "n": 25,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 18981253,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n25_k6",
+      "m": 2,
+      "n": 25,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 18981253,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n25_k7",
+      "m": 2,
+      "n": 25,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 18981253,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n25_k8",
+      "m": 2,
+      "n": 25,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 18981253,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n25_k9",
+      "m": 2,
+      "n": 25,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 18981253,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n25_k10",
+      "m": 2,
+      "n": 25,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 18981253,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n25_k11",
+      "m": 2,
+      "n": 25,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 18981253,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n25_k12",
+      "m": 2,
+      "n": 25,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 18981253,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n25_k13",
+      "m": 2,
+      "n": 25,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 18981253,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n25_k14",
+      "m": 2,
+      "n": 25,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 18981253,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n25_k15",
+      "m": 2,
+      "n": 25,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 18981253,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n25_k16",
+      "m": 2,
+      "n": 25,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 18981253,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n25_k17",
+      "m": 2,
+      "n": 25,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 18981253,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n25_k18",
+      "m": 2,
+      "n": 25,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 18981253,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n25_k19",
+      "m": 2,
+      "n": 25,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 18981253,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n25_k20",
+      "m": 2,
+      "n": 25,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 18981253,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n25_k21",
+      "m": 2,
+      "n": 25,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 18981253,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n25_k22",
+      "m": 2,
+      "n": 25,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 18981253,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "single_defect_n25_k23",
+      "m": 2,
+      "n": 25,
+      "scale_exp": 200,
+      "max_q": 1,
+      "coefficient_cap": 18981253,
+      "entries_per_implementation": 3
+    }
+  ],
+  "entries_per_implementation": 2044,
+  "rejection_and_boundary_classes": [
+    "+infinity",
+    "-infinity",
+    "NaN",
+    "actual defects exceed caller cap",
+    "both zero signs admitted",
+    "half lattice step",
+    "half step at exponent minimum",
+    "invalid pointers, strides, extents, exponent/n/q limits",
+    "m=0 unconditional no-op",
+    "n=0 lower zeros; upper/padding preserved",
+    "one ulp off grid",
+    "positive/negative first coefficient beyond integer-adjusted cap",
+    "smallest subnormal",
+    "tiny input scales to zero"
+  ]
+}

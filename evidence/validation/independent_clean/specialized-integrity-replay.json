@@ -1,0 +1,68 @@
+{
+  "historical_source_integrity": "all manifest source hashes independently verified from available bytes",
+  "verified_sources": [
+    {
+      "manifest_path": "benchmarks/specialized/src/benchmark.c",
+      "sha256": "74f4398b7161c2f49232d8ea1f7c9709cb6d089f1b197fc1573ff1d366e458de",
+      "verified_from": "benchmarks/specialized/src/benchmark.c"
+    },
+    {
+      "manifest_path": "benchmarks/specialized/src/hankel_sparse.c",
+      "sha256": "3e80b8d11b5b4d5cb2e5504f9f6fa79c0c35e13aef50ec274c97f403f108e95a",
+      "verified_from": "benchmarks/specialized/src/hankel_sparse.c"
+    },
+    {
+      "manifest_path": "benchmarks/specialized/src/hankel_sparse.h",
+      "sha256": "f4c4544d5dd4634fc7b77b36657cf699c92a6c72663972cfa4d2761f0eae096f",
+      "verified_from": "benchmarks/specialized/src/hankel_sparse.h"
+    },
+    {
+      "manifest_path": "benchmarks/specialized/tests/test_specialized.c",
+      "sha256": "cc1fe77b7ea7571ee8e6cb6febf4dd09a471ac2d32b0afccbebd5dd6b25fda97",
+      "verified_from": "benchmarks/specialized/tests/test_specialized.c"
+    },
+    {
+      "manifest_path": "benchmarks/specialized/Makefile",
+      "sha256": "815d5a64c365ebe67e390b4ff8ff79ca3d5039c1c2ab855ca96246079d2e5a3b",
+      "verified_from": "benchmarks/specialized/Makefile"
+    },
+    {
+      "manifest_path": "benchmarks/specialized/run.py",
+      "sha256": "b094656f068d61d03cd1ba37b543b9fe0c75618c5bdf0709193ca00dada5bcf0",
+      "verified_from": "benchmarks/specialized/run.py"
+    },
+    {
+      "manifest_path": "benchmarks/specialized/summarize.py",
+      "sha256": "88373f5dbb9f39d5dfec6f97dd2700736c72f2b43159f3a6eb3a78016e446eee",
+      "verified_from": "benchmarks/specialized/frozen_sources/88373f5dbb9f39d5dfec6f97dd2700736c72f2b43159f3a6eb3a78016e446eee/summarize.py"
+    },
+    {
+      "manifest_path": "benchmarks/specialized/audit.py",
+      "sha256": "f3dadea68a62f5e56797af5c9ebec1e5a8b9b1ea2464c894eb26a9c51a854cfa",
+      "verified_from": "benchmarks/specialized/audit.py"
+    },
+    {
+      "manifest_path": "benchmarks/specialized/tests/test_harness.py",
+      "sha256": "ef112cbf1a364321829580602a46bb65f0491bcc909e4ae6ab41cf078d36dc22",
+      "verified_from": "benchmarks/specialized/tests/test_harness.py"
+    },
+    {
+      "manifest_path": "benchmarks/specialized/tests/test_receipts.py",
+      "sha256": "691af40c53aa7d13c2908c5631df7839af6d4ca277ed58b49387dd4ebcd8a8c4",
+      "verified_from": "benchmarks/specialized/tests/test_receipts.py"
+    },
+    {
+      "manifest_path": "src/lattice_sequential.c",
+      "sha256": "7550990a7f6dd82fbd0e58580c9a6639eef7ffc07d841b56ae9cf189b394bde5",
+      "verified_from": "src/lattice_sequential.c"
+    }
+  ],
+  "historical_binary_sha256": "d5daaaf3c4dd890cb7fdb2002bfd87127fee9319f00e53673d8705ce9150e842",
+  "historical_binary_integrity": "hash consistency across frozen manifest, completed environment and every per-job receipt; historical execution is trusted from these receipts",
+  "local_binary_observation": "absent",
+  "local_binary_sha256": null,
+  "manifest_sha256": "4432f260fda9dad7c2ecbd47a618dd81dd281b229da85e773711170fa035b7f8",
+  "environment_manifest_matches": true,
+  "completed_environment_receipt": true,
+  "validated_job_receipts": 20
+}

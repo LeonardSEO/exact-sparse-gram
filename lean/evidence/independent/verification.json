@@ -1,0 +1,325 @@
+{
+  "source_bytes_unchanged": true,
+  "all_53_type_and_axiom_reports_byte_identical_to_original": true,
+  "axiom_report_count": 53,
+  "axioms": {
+    "GramExact.mixed": [
+      "propext",
+      "Quot.sound"
+    ],
+    "GramExact.firstState": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GramExact.secondState": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GramExact.support": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GramExact.dot": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GramExact.boundary": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GramExact.update": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GramExact.reconstruct": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GramExact.first_prefix": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GramExact.second_prefix": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GramExact.first_step": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GramExact.second_step": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GramExact.groups_join": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GramExact.groups_complete": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GramExact.boundary_identity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GramExact.recurrence": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GramExact.reconstruction": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GramExact.product_subset_bound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GramExact.tail_sum_bound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GramExact.first_prefix_bound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GramExact.second_prefix_bound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GramExact.first_prefix_cap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GramExact.second_prefix_cap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GramExact.residual_bound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GramExact.support_work": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GramExact.total_work": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GramExact.coefficientCap": [
+      "propext"
+    ],
+    "GramExact.GridRepresentable": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GramExact.RoundingModel": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GramExact.Binary64Bridge": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GramExact.Binary64SafeDyadic": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GramExact.roundedFMA_coefficients": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GramExact.roundedSub_coefficients": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GramExact.dyadicScale_square": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GramExact.accumulator_exponent_safe": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GramExact.roundedFirst": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GramExact.roundedSecond": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GramExact.rounded_first_exact": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GramExact.rounded_second_exact": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GramExact.rounded_groups_exact": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GramExact.rounded_boundary_exact": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GramExact.rounded_anchor_exact": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GramExact.rounded_anchor_merge": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GramExact.rounded_residual_exact": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GramExact.roundedUpdate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GramExact.rounded_update_exact": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GramExact.roundedReconstruct": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GramExact.rounded_reconstruction": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GramExact.computed_anchor_exact": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GramExact.roundedGram": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GramExact.rounded_gram_exact": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GramExact.scaled_dot": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "GramExact.binary64_gram_exact": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "dependency_revisions": [
+    {
+      "name": "mathlib",
+      "expected": "f897ebcf72cd16f89ab4577d0c826cd14afaafc7",
+      "actual": "f897ebcf72cd16f89ab4577d0c826cd14afaafc7"
+    },
+    {
+      "name": "plausible",
+      "expected": "dfd06ebfe8d0e8fa7faba9cb5e5a2e74e7bd2805",
+      "actual": "dfd06ebfe8d0e8fa7faba9cb5e5a2e74e7bd2805"
+    },
+    {
+      "name": "LeanSearchClient",
+      "expected": "99657ad92e23804e279f77ea6dbdeebaa1317b98",
+      "actual": "99657ad92e23804e279f77ea6dbdeebaa1317b98"
+    },
+    {
+      "name": "importGraph",
+      "expected": "d768126816be17600904726ca7976b185786e6b9",
+      "actual": "d768126816be17600904726ca7976b185786e6b9"
+    },
+    {
+      "name": "proofwidgets",
+      "expected": "556caed0eadb7901e068131d1be208dd907d07a2",
+      "actual": "556caed0eadb7901e068131d1be208dd907d07a2"
+    },
+    {
+      "name": "aesop",
+      "expected": "725ac8cd67acd70a7beaf47c3725e23484c1ef50",
+      "actual": "725ac8cd67acd70a7beaf47c3725e23484c1ef50"
+    },
+    {
+      "name": "Qq",
+      "expected": "dea6a3361fa36d5a13f87333dc506ada582e025c",
+      "actual": "dea6a3361fa36d5a13f87333dc506ada582e025c"
+    },
+    {
+      "name": "batteries",
+      "expected": "8da40b72fece29b7d3fe3d768bac4c8910ce9bee",
+      "actual": "8da40b72fece29b7d3fe3d768bac4c8910ce9bee"
+    },
+    {
+      "name": "Cli",
+      "expected": "91c18fa62838ad0ab7384c03c9684d99d306e1da",
+      "actual": "91c18fa62838ad0ab7384c03c9684d99d306e1da"
+    }
+  ],
+  "build_diagnostics_warning_or_error": [],
+  "project_oleans_built_fresh": [
+    ".lake/build/lib/lean/GramExact.olean",
+    ".lake/build/lib/lean/GramExact/Core.olean",
+    ".lake/build/lib/lean/GramExact/Arithmetic.olean",
+    ".lake/build/lib/lean/GramExact/Bridge.olean",
+    ".lake/build/lib/lean/GramExact/Bounds.olean"
+  ],
+  "paper_statement_mapping": "Checked paper.tex real recurrence, prefix, arithmetic theorem, nonempty FMA count, and explicit formalization trust boundaries; no mismatch found."
+}

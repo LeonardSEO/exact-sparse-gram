@@ -1,0 +1,16 @@
+note: Running TeX ...
+warning: paper.tex:479: Underfull \hbox (badness 10000) in paragraph at lines 478--479
+warning: paper.tex:480: Underfull \hbox (badness 10000) in paragraph at lines 479--480
+note: Running BibTeX on paper.aux ...
+note: Rerunning TeX because bibtex was run ...
+warning: paper.tex:479: Underfull \hbox (badness 10000) in paragraph at lines 478--479
+warning: paper.tex:480: Underfull \hbox (badness 10000) in paragraph at lines 479--480
+note: Rerunning TeX because "paper.aux" changed ...
+warning: paper.tex:479: Underfull \hbox (badness 10000) in paragraph at lines 478--479
+warning: paper.tex:480: Underfull \hbox (badness 10000) in paragraph at lines 479--480
+warning: warnings were issued by the TeX engine; use --print and/or --keep-logs for details.
+note: Running xdvipdfmx ...
+note: Writing `paper.log` (17.123046875 KiB)
+note: Writing `paper.blg` (195 B)
+note: Writing `paper.pdf` (127.5498046875 KiB)
+note: Skipped writing 3 intermediate files (use --keep-intermediates to keep them)

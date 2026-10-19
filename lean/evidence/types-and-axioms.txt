@@ -1,0 +1,524 @@
+def GramExact.mixed.{u_1} : {R : Type u_1} → Finset.{0} Nat → (Nat → R) → (Nat → R) → Nat → R :=
+fun {R} P a u k => ite.{u_1 + 1} (Membership.mem.{0, 0} P k) (a k) (u k)
+'GramExact.mixed' depends on axioms: [propext, Quot.sound]
+def GramExact.firstState.{u_1} : {R : Type u_1} →
+  [CommRing.{u_1} R] → Nat → R → (Nat → R) → (Nat → R) → (Nat → R) → Finset.{0} Nat → R :=
+fun {R} [CommRing.{u_1} R] n t a u v P =>
+  HAdd.hAdd.{u_1, u_1, u_1} (HAdd.hAdd.{u_1, u_1, u_1} t (∑ k ∈ Finset.range n, HMul.hMul.{u_1, u_1, u_1} (u k) (v k)))
+    (∑ k ∈ P, HMul.hMul.{u_1, u_1, u_1} (HSub.hSub.{u_1, u_1, u_1} (a k) (u k)) (v k))
+'GramExact.firstState' depends on axioms: [propext, Classical.choice, Quot.sound]
+def GramExact.secondState.{u_1} : {R : Type u_1} →
+  [CommRing.{u_1} R] → Nat → R → (Nat → R) → (Nat → R) → (Nat → R) → Finset.{0} Nat → R :=
+fun {R} [CommRing.{u_1} R] n t a b v Q =>
+  HAdd.hAdd.{u_1, u_1, u_1} (HAdd.hAdd.{u_1, u_1, u_1} t (∑ k ∈ Finset.range n, HMul.hMul.{u_1, u_1, u_1} (a k) (v k)))
+    (∑ k ∈ Q, HMul.hMul.{u_1, u_1, u_1} (a k) (HSub.hSub.{u_1, u_1, u_1} (b k) (v k)))
+'GramExact.secondState' depends on axioms: [propext, Classical.choice, Quot.sound]
+def GramExact.support.{u_1} : {R : Type u_1} →
+  [DecidableEq.{u_1 + 1} R] → Nat → (Nat → R) → (Nat → R) → Finset.{0} Nat :=
+fun {R} [DecidableEq.{u_1 + 1} R] n a u => {k ∈ Finset.range n | Ne.{u_1 + 1} (a k) (u k)}
+'GramExact.support' depends on axioms: [propext, Classical.choice, Quot.sound]
+def GramExact.dot : Nat → (Nat → Real) → (Nat → Real) → Real :=
+fun n a b => ∑ k ∈ Finset.range n, HMul.hMul.{0, 0, 0} (a k) (b k)
+'GramExact.dot' depends on axioms: [propext, Classical.choice, Quot.sound]
+def GramExact.boundary : Nat → (Nat → Real) → (Nat → Real) → (Nat → Real) → (Nat → Real) → Real → Real :=
+fun n p q a b g =>
+  HAdd.hAdd.{0, 0, 0} (HSub.hSub.{0, 0, 0} g (HMul.hMul.{0, 0, 0} (p 0) (q 0))) (HMul.hMul.{0, 0, 0} (a n) (b n))
+'GramExact.boundary' depends on axioms: [propext, Classical.choice, Quot.sound]
+def GramExact.update : Nat → (Nat → Real) → (Nat → Real) → (Nat → Real) → (Nat → Real) → Real → Real :=
+fun n p q a b g =>
+  HAdd.hAdd.{0, 0, 0}
+    (HAdd.hAdd.{0, 0, 0} (GramExact.boundary n p q a b g)
+      (∑ k ∈ GramExact.support.{0} n a fun k => p (HAdd.hAdd.{0, 0, 0} k 1),
+        HMul.hMul.{0, 0, 0} (HSub.hSub.{0, 0, 0} (a k) (p (HAdd.hAdd.{0, 0, 0} k 1))) (q (HAdd.hAdd.{0, 0, 0} k 1))))
+    (∑ k ∈ GramExact.support.{0} n b fun k => q (HAdd.hAdd.{0, 0, 0} k 1),
+      HMul.hMul.{0, 0, 0} (a k) (HSub.hSub.{0, 0, 0} (b k) (q (HAdd.hAdd.{0, 0, 0} k 1))))
+'GramExact.update' depends on axioms: [propext, Classical.choice, Quot.sound]
+def GramExact.reconstruct : Nat → (Nat → Nat → Real) → (Nat → Real) → Nat → Nat → Real :=
+fun n A anchor x x_1 =>
+  Nat.brecOn.{1} (motive := fun x => Nat → Real) x
+    (fun x f x_2 =>
+      (match (motive := (x : Nat) → Nat → Nat.below.{1} (motive := fun x => Nat → Real) x → Real) x, x_2 with
+        | i, 0 => fun x => anchor i
+        | 0, Nat.succ j => fun x => GramExact.dot (HAdd.hAdd.{0, 0, 0} n 1) (A 0) (A (HAdd.hAdd.{0, 0, 0} j 1))
+        | Nat.succ i, Nat.succ j => fun x =>
+          GramExact.update n (A i) (A j) (A (HAdd.hAdd.{0, 0, 0} i 1)) (A (HAdd.hAdd.{0, 0, 0} j 1)) (x.1 j))
+        f)
+    x_1
+'GramExact.reconstruct' depends on axioms: [propext, Classical.choice, Quot.sound]
+theorem GramExact.first_prefix.{u_1} : ∀ {R : Type u_1} [inst : CommRing.{u_1} R] (n : Nat) (t : R) (a u v : Nat → R)
+  (P : Finset.{0} Nat),
+  Subset.{0} P (Finset.range n) →
+    Eq.{u_1 + 1} (GramExact.firstState.{u_1} n t a u v P)
+      (HAdd.hAdd.{u_1, u_1, u_1} t
+        (∑ k ∈ Finset.range n, HMul.hMul.{u_1, u_1, u_1} (GramExact.mixed.{u_1} P a u k) (v k))) :=
+⋯
+'GramExact.first_prefix' depends on axioms: [propext, Classical.choice, Quot.sound]
+theorem GramExact.second_prefix.{u_1} : ∀ {R : Type u_1} [inst : CommRing.{u_1} R] (n : Nat) (t : R) (a b v : Nat → R)
+  (Q : Finset.{0} Nat),
+  Subset.{0} Q (Finset.range n) →
+    Eq.{u_1 + 1} (GramExact.secondState.{u_1} n t a b v Q)
+      (HAdd.hAdd.{u_1, u_1, u_1} t
+        (∑ k ∈ Finset.range n, HMul.hMul.{u_1, u_1, u_1} (a k) (GramExact.mixed.{u_1} Q b v k))) :=
+⋯
+'GramExact.second_prefix' depends on axioms: [propext, Classical.choice, Quot.sound]
+theorem GramExact.first_step.{u_1} : ∀ {R : Type u_1} [inst : CommRing.{u_1} R] (n : Nat) (t : R) (a u v : Nat → R)
+  (P : Finset.{0} Nat),
+  ∀ k ∉ P,
+    Eq.{u_1 + 1} (GramExact.firstState.{u_1} n t a u v (insert.{0, 0} k P))
+      (HAdd.hAdd.{u_1, u_1, u_1} (GramExact.firstState.{u_1} n t a u v P)
+        (HMul.hMul.{u_1, u_1, u_1} (HSub.hSub.{u_1, u_1, u_1} (a k) (u k)) (v k))) :=
+⋯
+'GramExact.first_step' depends on axioms: [propext, Classical.choice, Quot.sound]
+theorem GramExact.second_step.{u_1} : ∀ {R : Type u_1} [inst : CommRing.{u_1} R] (n : Nat) (t : R) (a b v : Nat → R)
+  (Q : Finset.{0} Nat),
+  ∀ k ∉ Q,
+    Eq.{u_1 + 1} (GramExact.secondState.{u_1} n t a b v (insert.{0, 0} k Q))
+      (HAdd.hAdd.{u_1, u_1, u_1} (GramExact.secondState.{u_1} n t a b v Q)
+        (HMul.hMul.{u_1, u_1, u_1} (a k) (HSub.hSub.{u_1, u_1, u_1} (b k) (v k)))) :=
+⋯
+'GramExact.second_step' depends on axioms: [propext, Classical.choice, Quot.sound]
+theorem GramExact.groups_join.{u_1} : ∀ {R : Type u_1} [inst : CommRing.{u_1} R] [inst_1 : DecidableEq.{u_1 + 1} R]
+  (n : Nat) (t : R) (a u b v : Nat → R),
+  Eq.{u_1 + 1} (GramExact.firstState.{u_1} n t a u v (GramExact.support.{u_1} n a u))
+    (GramExact.secondState.{u_1} n t a b v EmptyCollection.emptyCollection.{0}) :=
+⋯
+'GramExact.groups_join' depends on axioms: [propext, Classical.choice, Quot.sound]
+theorem GramExact.groups_complete.{u_1} : ∀ {R : Type u_1} [inst : CommRing.{u_1} R] [inst_1 : DecidableEq.{u_1 + 1} R]
+  (n : Nat) (t : R) (a b v : Nat → R),
+  Eq.{u_1 + 1} (GramExact.secondState.{u_1} n t a b v (GramExact.support.{u_1} n b v))
+    (HAdd.hAdd.{u_1, u_1, u_1} t (∑ k ∈ Finset.range n, HMul.hMul.{u_1, u_1, u_1} (a k) (b k))) :=
+⋯
+'GramExact.groups_complete' depends on axioms: [propext, Classical.choice, Quot.sound]
+theorem GramExact.boundary_identity : ∀ (n : Nat) (p q a b : Nat → Real),
+  Eq.{1} (GramExact.boundary n p q a b (GramExact.dot (HAdd.hAdd.{0, 0, 0} n 1) p q))
+    (HAdd.hAdd.{0, 0, 0} (HMul.hMul.{0, 0, 0} (a n) (b n))
+      (∑ k ∈ Finset.range n, HMul.hMul.{0, 0, 0} (p (HAdd.hAdd.{0, 0, 0} k 1)) (q (HAdd.hAdd.{0, 0, 0} k 1)))) :=
+⋯
+'GramExact.boundary_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+theorem GramExact.recurrence : ∀ (n : Nat) (p q a b : Nat → Real),
+  Eq.{1} (GramExact.update n p q a b (GramExact.dot (HAdd.hAdd.{0, 0, 0} n 1) p q))
+    (GramExact.dot (HAdd.hAdd.{0, 0, 0} n 1) a b) :=
+⋯
+'GramExact.recurrence' depends on axioms: [propext, Classical.choice, Quot.sound]
+theorem GramExact.reconstruction : ∀ (n : Nat) (A : Nat → Nat → Real) (anchor : Nat → Real),
+  (∀ (i : Nat), Eq.{1} (anchor i) (GramExact.dot (HAdd.hAdd.{0, 0, 0} n 1) (A i) (A 0))) →
+    ∀ (i j : Nat),
+      LE.le.{0} j i →
+        Eq.{1} (GramExact.reconstruct n A anchor i j) (GramExact.dot (HAdd.hAdd.{0, 0, 0} n 1) (A i) (A j)) :=
+⋯
+'GramExact.reconstruction' depends on axioms: [propext, Classical.choice, Quot.sound]
+theorem GramExact.product_subset_bound : ∀ (s : Finset.{0} Nat) (a b : Nat → Int) (B : Int),
+  LE.le.{0} 0 B →
+    (∀ (k : Nat), LE.le.{0} (abs.{0} (a k)) B) →
+      (∀ (k : Nat), LE.le.{0} (abs.{0} (b k)) B) →
+        LE.le.{0} (abs.{0} (∑ k ∈ s, HMul.hMul.{0, 0, 0} (a k) (b k)))
+          (HMul.hMul.{0, 0, 0} (↑(Finset.card.{0} s)) (HPow.hPow.{0, 0, 0} B 2)) :=
+⋯
+'GramExact.product_subset_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+theorem GramExact.tail_sum_bound : ∀ (n : Nat) (x y B : Int) (a b : Nat → Int),
+  LE.le.{0} 0 B →
+    LE.le.{0} (abs.{0} x) B →
+      LE.le.{0} (abs.{0} y) B →
+        (∀ (k : Nat), LE.le.{0} (abs.{0} (a k)) B) →
+          (∀ (k : Nat), LE.le.{0} (abs.{0} (b k)) B) →
+            LE.le.{0}
+              (abs.{0}
+                (HAdd.hAdd.{0, 0, 0} (HMul.hMul.{0, 0, 0} x y) (∑ k ∈ Finset.range n, HMul.hMul.{0, 0, 0} (a k) (b k))))
+              (HMul.hMul.{0, 0, 0} (↑(HAdd.hAdd.{0, 0, 0} n 1)) (HPow.hPow.{0, 0, 0} B 2)) :=
+⋯
+'GramExact.tail_sum_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+theorem GramExact.first_prefix_bound : ∀ (n : Nat) (x y B : Int) (a u v : Nat → Int) (P : Finset.{0} Nat),
+  Subset.{0} P (Finset.range n) →
+    LE.le.{0} 0 B →
+      LE.le.{0} (abs.{0} x) B →
+        LE.le.{0} (abs.{0} y) B →
+          (∀ (k : Nat), LE.le.{0} (abs.{0} (a k)) B) →
+            (∀ (k : Nat), LE.le.{0} (abs.{0} (u k)) B) →
+              (∀ (k : Nat), LE.le.{0} (abs.{0} (v k)) B) →
+                LE.le.{0} (abs.{0} (GramExact.firstState.{0} n (HMul.hMul.{0, 0, 0} x y) a u v P))
+                  (HMul.hMul.{0, 0, 0} (↑(HAdd.hAdd.{0, 0, 0} n 1)) (HPow.hPow.{0, 0, 0} B 2)) :=
+⋯
+'GramExact.first_prefix_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+theorem GramExact.second_prefix_bound : ∀ (n : Nat) (x y B : Int) (a b v : Nat → Int) (Q : Finset.{0} Nat),
+  Subset.{0} Q (Finset.range n) →
+    LE.le.{0} 0 B →
+      LE.le.{0} (abs.{0} x) B →
+        LE.le.{0} (abs.{0} y) B →
+          (∀ (k : Nat), LE.le.{0} (abs.{0} (a k)) B) →
+            (∀ (k : Nat), LE.le.{0} (abs.{0} (b k)) B) →
+              (∀ (k : Nat), LE.le.{0} (abs.{0} (v k)) B) →
+                LE.le.{0} (abs.{0} (GramExact.secondState.{0} n (HMul.hMul.{0, 0, 0} x y) a b v Q))
+                  (HMul.hMul.{0, 0, 0} (↑(HAdd.hAdd.{0, 0, 0} n 1)) (HPow.hPow.{0, 0, 0} B 2)) :=
+⋯
+'GramExact.second_prefix_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+theorem GramExact.first_prefix_cap : ∀ (n : Nat) (x y B : Int) (a u v : Nat → Int) (P : Finset.{0} Nat),
+  Subset.{0} P (Finset.range n) →
+    LE.le.{0} 0 B →
+      LE.le.{0} (abs.{0} x) B →
+        LE.le.{0} (abs.{0} y) B →
+          (∀ (k : Nat), LE.le.{0} (abs.{0} (a k)) B) →
+            (∀ (k : Nat), LE.le.{0} (abs.{0} (u k)) B) →
+              (∀ (k : Nat), LE.le.{0} (abs.{0} (v k)) B) →
+                LE.le.{0} (HMul.hMul.{0, 0, 0} (↑(HAdd.hAdd.{0, 0, 0} n 1)) (HPow.hPow.{0, 0, 0} B 2))
+                    (HPow.hPow.{0, 0, 0} 2 53) →
+                  LE.le.{0} (abs.{0} (GramExact.firstState.{0} n (HMul.hMul.{0, 0, 0} x y) a u v P))
+                    (HPow.hPow.{0, 0, 0} 2 53) :=
+⋯
+'GramExact.first_prefix_cap' depends on axioms: [propext, Classical.choice, Quot.sound]
+theorem GramExact.second_prefix_cap : ∀ (n : Nat) (x y B : Int) (a b v : Nat → Int) (Q : Finset.{0} Nat),
+  Subset.{0} Q (Finset.range n) →
+    LE.le.{0} 0 B →
+      LE.le.{0} (abs.{0} x) B →
+        LE.le.{0} (abs.{0} y) B →
+          (∀ (k : Nat), LE.le.{0} (abs.{0} (a k)) B) →
+            (∀ (k : Nat), LE.le.{0} (abs.{0} (b k)) B) →
+              (∀ (k : Nat), LE.le.{0} (abs.{0} (v k)) B) →
+                LE.le.{0} (HMul.hMul.{0, 0, 0} (↑(HAdd.hAdd.{0, 0, 0} n 1)) (HPow.hPow.{0, 0, 0} B 2))
+                    (HPow.hPow.{0, 0, 0} 2 53) →
+                  LE.le.{0} (abs.{0} (GramExact.secondState.{0} n (HMul.hMul.{0, 0, 0} x y) a b v Q))
+                    (HPow.hPow.{0, 0, 0} 2 53) :=
+⋯
+'GramExact.second_prefix_cap' depends on axioms: [propext, Classical.choice, Quot.sound]
+theorem GramExact.residual_bound : ∀ (a u B : Int),
+  LE.le.{0} (abs.{0} a) B →
+    LE.le.{0} (abs.{0} u) B → LE.le.{0} (abs.{0} (HSub.hSub.{0, 0, 0} a u)) (HMul.hMul.{0, 0, 0} 2 B) :=
+⋯
+'GramExact.residual_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+theorem GramExact.support_work : ∀ (m : Nat) (q : Nat → Nat),
+  Eq.{1} (q 0) 0 →
+    Eq.{1} (∑ i ∈ Finset.range m, ∑ j ∈ Finset.range i, HAdd.hAdd.{0, 0, 0} (q i) (q (HAdd.hAdd.{0, 0, 0} j 1)))
+      (HMul.hMul.{0, 0, 0} m (∑ i ∈ Finset.range m, q i)) :=
+⋯
+'GramExact.support_work' depends on axioms: [propext, Classical.choice, Quot.sound]
+theorem GramExact.total_work : ∀ (m n : Nat) (q : Nat → Nat),
+  Eq.{1} (q 0) 0 →
+    Eq.{1} (GramExact.totalWork m n q)
+      (HAdd.hAdd.{0, 0, 0}
+        (HAdd.hAdd.{0, 0, 0} (HMul.hMul.{0, 0, 0} m n) (HMul.hMul.{0, 0, 0} 2 (∑ i ∈ Finset.range m, i)))
+        (HMul.hMul.{0, 0, 0} m (∑ i ∈ Finset.range m, q i))) :=
+⋯
+'GramExact.total_work' depends on axioms: [propext, Classical.choice, Quot.sound]
+def GramExact.coefficientCap : Int :=
+HPow.hPow.{0, 0, 0} 2 53
+'GramExact.coefficientCap' depends on axioms: [propext]
+def GramExact.GridRepresentable : Real → Real → Prop :=
+fun scale x => ∃ z, And (LE.le.{0} (abs.{0} z) GramExact.coefficientCap) (Eq.{1} x (HMul.hMul.{0, 0, 0} (↑z) scale))
+'GramExact.GridRepresentable' depends on axioms: [propext, Classical.choice, Quot.sound]
+structure GramExact.RoundingModel (scale : Real) : Type
+number of parameters: 1
+fields:
+  GramExact.RoundingModel.round : Real → Real
+  GramExact.RoundingModel.fixes : ∀ (x : Real),
+      GramExact.GridRepresentable scale x → Eq.{1} (GramExact.RoundingModel.round self x) x
+constructor:
+  GramExact.RoundingModel.mk {scale : Real} (round : Real → Real)
+    (fixes : ∀ (x : Real), GramExact.GridRepresentable scale x → Eq.{1} (round x) x) : GramExact.RoundingModel scale
+'GramExact.RoundingModel' depends on axioms: [propext, Classical.choice, Quot.sound]
+structure GramExact.Binary64Bridge : Type
+number of parameters: 0
+fields:
+  GramExact.Binary64Bridge.round : Real → Real
+  GramExact.Binary64Bridge.fixes_safe : ∀ (x : Real),
+      GramExact.Binary64SafeDyadic x → Eq.{1} (GramExact.Binary64Bridge.round self x) x
+constructor:
+  GramExact.Binary64Bridge.mk (round : Real → Real)
+    (fixes_safe : ∀ (x : Real), GramExact.Binary64SafeDyadic x → Eq.{1} (round x) x) : GramExact.Binary64Bridge
+'GramExact.Binary64Bridge' depends on axioms: [propext, Classical.choice, Quot.sound]
+def GramExact.Binary64SafeDyadic : Real → Prop :=
+fun x =>
+  ∃ e, And (LE.le.{0} (-1022) e) (And (LE.le.{0} e 970) (GramExact.GridRepresentable (GramExact.dyadicScale e) x))
+'GramExact.Binary64SafeDyadic' depends on axioms: [propext, Classical.choice, Quot.sound]
+theorem GramExact.roundedFMA_coefficients : ∀ {s : Real} (M : GramExact.RoundingModel (HMul.hMul.{0, 0, 0} s s))
+  (a b c : Int),
+  LE.le.{0} (abs.{0} (HAdd.hAdd.{0, 0, 0} (HMul.hMul.{0, 0, 0} a b) c)) GramExact.coefficientCap →
+    Eq.{1}
+      (GramExact.roundedFMA (GramExact.RoundingModel.round M) (HMul.hMul.{0, 0, 0} (↑a) s) (HMul.hMul.{0, 0, 0} (↑b) s)
+        (HMul.hMul.{0, 0, 0} (↑c) (HMul.hMul.{0, 0, 0} s s)))
+      (HMul.hMul.{0, 0, 0} (↑(HAdd.hAdd.{0, 0, 0} (HMul.hMul.{0, 0, 0} a b) c)) (HMul.hMul.{0, 0, 0} s s)) :=
+⋯
+'GramExact.roundedFMA_coefficients' depends on axioms: [propext, Classical.choice, Quot.sound]
+theorem GramExact.roundedSub_coefficients : ∀ {s : Real} (M : GramExact.RoundingModel s) (a b : Int),
+  LE.le.{0} (abs.{0} (HSub.hSub.{0, 0, 0} a b)) GramExact.coefficientCap →
+    Eq.{1}
+      (GramExact.roundedSub (GramExact.RoundingModel.round M) (HMul.hMul.{0, 0, 0} (↑a) s) (HMul.hMul.{0, 0, 0} (↑b) s))
+      (HMul.hMul.{0, 0, 0} (↑(HSub.hSub.{0, 0, 0} a b)) s) :=
+⋯
+'GramExact.roundedSub_coefficients' depends on axioms: [propext, Classical.choice, Quot.sound]
+theorem GramExact.dyadicScale_square : ∀ (e : Int),
+  Eq.{1} (HMul.hMul.{0, 0, 0} (GramExact.dyadicScale e) (GramExact.dyadicScale e))
+    (GramExact.dyadicScale (HMul.hMul.{0, 0, 0} 2 e)) :=
+⋯
+'GramExact.dyadicScale_square' depends on axioms: [propext, Classical.choice, Quot.sound]
+theorem GramExact.accumulator_exponent_safe : ∀ {e : Int},
+  LE.le.{0} (-400) e →
+    LE.le.{0} e 200 → And (LE.le.{0} (-1022) (HMul.hMul.{0, 0, 0} 2 e)) (LE.le.{0} (HMul.hMul.{0, 0, 0} 2 e) 970) :=
+⋯
+'GramExact.accumulator_exponent_safe' depends on axioms: [propext, Classical.choice, Quot.sound]
+def GramExact.roundedFirst : Real →
+  (Real → Real) → (Nat → Int) → (Nat → Int) → (Nat → Int) → Real → List.{0} Nat → Real :=
+fun s round a u v initial ks =>
+  List.foldr.{0, 0}
+    (fun k c =>
+      GramExact.roundedFMA round (HMul.hMul.{0, 0, 0} (↑(HSub.hSub.{0, 0, 0} (a k) (u k))) s)
+        (HMul.hMul.{0, 0, 0} (↑(v k)) s) c)
+    initial ks
+'GramExact.roundedFirst' depends on axioms: [propext, Classical.choice, Quot.sound]
+def GramExact.roundedSecond : Real →
+  (Real → Real) → (Nat → Int) → (Nat → Int) → (Nat → Int) → Real → List.{0} Nat → Real :=
+fun s round a b v initial ks =>
+  List.foldr.{0, 0}
+    (fun k c =>
+      GramExact.roundedFMA round (HMul.hMul.{0, 0, 0} (↑(a k)) s)
+        (HMul.hMul.{0, 0, 0} (↑(HSub.hSub.{0, 0, 0} (b k) (v k))) s) c)
+    initial ks
+'GramExact.roundedSecond' depends on axioms: [propext, Classical.choice, Quot.sound]
+theorem GramExact.rounded_first_exact : ∀ (s : Real) (M : GramExact.RoundingModel (HMul.hMul.{0, 0, 0} s s)) (n : Nat)
+  (x y B : Int) (a u v : Nat → Int),
+  LE.le.{0} 0 B →
+    LE.le.{0} (abs.{0} x) B →
+      LE.le.{0} (abs.{0} y) B →
+        (∀ (k : Nat), LE.le.{0} (abs.{0} (a k)) B) →
+          (∀ (k : Nat), LE.le.{0} (abs.{0} (u k)) B) →
+            (∀ (k : Nat), LE.le.{0} (abs.{0} (v k)) B) →
+              LE.le.{0} (HMul.hMul.{0, 0, 0} (↑(HAdd.hAdd.{0, 0, 0} n 1)) (HPow.hPow.{0, 0, 0} B 2))
+                  (HPow.hPow.{0, 0, 0} 2 53) →
+                ∀ (ks : List.{0} Nat),
+                  List.Nodup.{0} ks →
+                    Subset.{0} (List.toFinset.{0} ks) (Finset.range n) →
+                      Eq.{1}
+                        (GramExact.roundedFirst s (GramExact.RoundingModel.round M) a u v
+                          (GramExact.scaled s
+                            (GramExact.firstState.{0} n (HMul.hMul.{0, 0, 0} x y) a u v
+                              EmptyCollection.emptyCollection.{0}))
+                          ks)
+                        (GramExact.scaled s
+                          (GramExact.firstState.{0} n (HMul.hMul.{0, 0, 0} x y) a u v (List.toFinset.{0} ks))) :=
+⋯
+'GramExact.rounded_first_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+theorem GramExact.rounded_second_exact : ∀ (s : Real) (M : GramExact.RoundingModel (HMul.hMul.{0, 0, 0} s s)) (n : Nat)
+  (x y B : Int) (a b v : Nat → Int),
+  LE.le.{0} 0 B →
+    LE.le.{0} (abs.{0} x) B →
+      LE.le.{0} (abs.{0} y) B →
+        (∀ (k : Nat), LE.le.{0} (abs.{0} (a k)) B) →
+          (∀ (k : Nat), LE.le.{0} (abs.{0} (b k)) B) →
+            (∀ (k : Nat), LE.le.{0} (abs.{0} (v k)) B) →
+              LE.le.{0} (HMul.hMul.{0, 0, 0} (↑(HAdd.hAdd.{0, 0, 0} n 1)) (HPow.hPow.{0, 0, 0} B 2))
+                  (HPow.hPow.{0, 0, 0} 2 53) →
+                ∀ (ks : List.{0} Nat),
+                  List.Nodup.{0} ks →
+                    Subset.{0} (List.toFinset.{0} ks) (Finset.range n) →
+                      Eq.{1}
+                        (GramExact.roundedSecond s (GramExact.RoundingModel.round M) a b v
+                          (GramExact.scaled s
+                            (GramExact.secondState.{0} n (HMul.hMul.{0, 0, 0} x y) a b v
+                              EmptyCollection.emptyCollection.{0}))
+                          ks)
+                        (GramExact.scaled s
+                          (GramExact.secondState.{0} n (HMul.hMul.{0, 0, 0} x y) a b v (List.toFinset.{0} ks))) :=
+⋯
+'GramExact.rounded_second_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+theorem GramExact.rounded_groups_exact : ∀ (s : Real) (M : GramExact.RoundingModel (HMul.hMul.{0, 0, 0} s s)) (n : Nat)
+  (x y B : Int) (a u b v : Nat → Int),
+  LE.le.{0} 0 B →
+    LE.le.{0} (abs.{0} x) B →
+      LE.le.{0} (abs.{0} y) B →
+        (∀ (k : Nat), LE.le.{0} (abs.{0} (a k)) B) →
+          (∀ (k : Nat), LE.le.{0} (abs.{0} (u k)) B) →
+            (∀ (k : Nat), LE.le.{0} (abs.{0} (b k)) B) →
+              (∀ (k : Nat), LE.le.{0} (abs.{0} (v k)) B) →
+                LE.le.{0} (HMul.hMul.{0, 0, 0} (↑(HAdd.hAdd.{0, 0, 0} n 1)) (HPow.hPow.{0, 0, 0} B 2))
+                    (HPow.hPow.{0, 0, 0} 2 53) →
+                  ∀ (left right : List.{0} Nat),
+                    List.Nodup.{0} left →
+                      List.Nodup.{0} right →
+                        Eq.{1} (List.toFinset.{0} left) (GramExact.support.{0} n a u) →
+                          Eq.{1} (List.toFinset.{0} right) (GramExact.support.{0} n b v) →
+                            Eq.{1}
+                              (GramExact.roundedSecond s (GramExact.RoundingModel.round M) a b v
+                                (GramExact.roundedFirst s (GramExact.RoundingModel.round M) a u v
+                                  (GramExact.scaled s
+                                    (GramExact.firstState.{0} n (HMul.hMul.{0, 0, 0} x y) a u v
+                                      EmptyCollection.emptyCollection.{0}))
+                                  left)
+                                right)
+                              (GramExact.scaled s
+                                (HAdd.hAdd.{0, 0, 0} (HMul.hMul.{0, 0, 0} x y)
+                                  (∑ k ∈ Finset.range n, HMul.hMul.{0, 0, 0} (a k) (b k)))) :=
+⋯
+'GramExact.rounded_groups_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+theorem GramExact.rounded_boundary_exact : ∀ (s : Real) (M : GramExact.RoundingModel (HMul.hMul.{0, 0, 0} s s))
+  (n : Nat) (B : Int) (p q a b : Nat → Int),
+  LE.le.{0} 0 B →
+    (∀ (k : Nat), LE.le.{0} (abs.{0} (p k)) B) →
+      (∀ (k : Nat), LE.le.{0} (abs.{0} (q k)) B) →
+        (∀ (k : Nat), LE.le.{0} (abs.{0} (a k)) B) →
+          (∀ (k : Nat), LE.le.{0} (abs.{0} (b k)) B) →
+            LE.le.{0} (HMul.hMul.{0, 0, 0} (↑(HAdd.hAdd.{0, 0, 0} n 1)) (HPow.hPow.{0, 0, 0} B 2))
+                (HPow.hPow.{0, 0, 0} 2 53) →
+              Eq.{1}
+                (GramExact.roundedFMA (GramExact.RoundingModel.round M) (HMul.hMul.{0, 0, 0} (↑(a n)) s)
+                  (HMul.hMul.{0, 0, 0} (↑(b n)) s)
+                  (GramExact.roundedFMA (GramExact.RoundingModel.round M) (HMul.hMul.{0, 0, 0} (↑(Neg.neg.{0} (p 0))) s)
+                    (HMul.hMul.{0, 0, 0} (↑(q 0)) s)
+                    (GramExact.scaled s (GramExact.intDot (HAdd.hAdd.{0, 0, 0} n 1) p q))))
+                (GramExact.scaled s
+                  (GramExact.firstState.{0} n (HMul.hMul.{0, 0, 0} (a n) (b n)) a (fun k => p (HAdd.hAdd.{0, 0, 0} k 1))
+                    (fun k => q (HAdd.hAdd.{0, 0, 0} k 1)) EmptyCollection.emptyCollection.{0})) :=
+⋯
+'GramExact.rounded_boundary_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+theorem GramExact.rounded_anchor_exact : ∀ (s : Real) (M : GramExact.RoundingModel (HMul.hMul.{0, 0, 0} s s)) (n : Nat)
+  (B : Int) (a b : Nat → Int),
+  LE.le.{0} 0 B →
+    (∀ (k : Nat), LE.le.{0} (abs.{0} (a k)) B) →
+      (∀ (k : Nat), LE.le.{0} (abs.{0} (b k)) B) →
+        LE.le.{0} (HMul.hMul.{0, 0, 0} (↑n) (HPow.hPow.{0, 0, 0} B 2)) (HPow.hPow.{0, 0, 0} 2 53) →
+          ∀ (ks : List.{0} Nat),
+            List.Nodup.{0} ks →
+              Subset.{0} (List.toFinset.{0} ks) (Finset.range n) →
+                Eq.{1} (GramExact.roundedAnchor s (GramExact.RoundingModel.round M) a b ks)
+                  (GramExact.scaled s (∑ k ∈ List.toFinset.{0} ks, HMul.hMul.{0, 0, 0} (a k) (b k))) :=
+⋯
+'GramExact.rounded_anchor_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+theorem GramExact.rounded_anchor_merge : ∀ (s : Real) (M : GramExact.RoundingModel (HMul.hMul.{0, 0, 0} s s)) (n : Nat)
+  (B : Int) (a b : Nat → Int),
+  LE.le.{0} 0 B →
+    (∀ (k : Nat), LE.le.{0} (abs.{0} (a k)) B) →
+      (∀ (k : Nat), LE.le.{0} (abs.{0} (b k)) B) →
+        LE.le.{0} (HMul.hMul.{0, 0, 0} (↑n) (HPow.hPow.{0, 0, 0} B 2)) (HPow.hPow.{0, 0, 0} 2 53) →
+          ∀ (P Q : Finset.{0} Nat),
+            Disjoint.{0} P Q →
+              Subset.{0} (Union.union.{0} P Q) (Finset.range n) →
+                Eq.{1}
+                  (GramExact.roundedAdd (GramExact.RoundingModel.round M)
+                    (GramExact.scaled s (∑ k ∈ P, HMul.hMul.{0, 0, 0} (a k) (b k)))
+                    (GramExact.scaled s (∑ k ∈ Q, HMul.hMul.{0, 0, 0} (a k) (b k))))
+                  (GramExact.scaled s (∑ k ∈ Union.union.{0} P Q, HMul.hMul.{0, 0, 0} (a k) (b k))) :=
+⋯
+'GramExact.rounded_anchor_merge' depends on axioms: [propext, Classical.choice, Quot.sound]
+theorem GramExact.rounded_residual_exact : ∀ (s : Real) (M : GramExact.RoundingModel s) (n : Nat) (B a u : Int),
+  LE.le.{0} 0 B →
+    LE.le.{0} (abs.{0} a) B →
+      LE.le.{0} (abs.{0} u) B →
+        LE.le.{0} (HMul.hMul.{0, 0, 0} (↑(HAdd.hAdd.{0, 0, 0} n 1)) (HPow.hPow.{0, 0, 0} B 2))
+            (HPow.hPow.{0, 0, 0} 2 53) →
+          Eq.{1}
+            (GramExact.roundedSub (GramExact.RoundingModel.round M) (HMul.hMul.{0, 0, 0} (↑a) s)
+              (HMul.hMul.{0, 0, 0} (↑u) s))
+            (HMul.hMul.{0, 0, 0} (↑(HSub.hSub.{0, 0, 0} a u)) s) :=
+⋯
+'GramExact.rounded_residual_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+def GramExact.roundedUpdate : Real →
+  (Real → Real) →
+    Nat → (Nat → Int) → (Nat → Int) → (Nat → Int) → (Nat → Int) → Real → List.{0} Nat → List.{0} Nat → Real :=
+fun s round n p q a b g left right =>
+  GramExact.roundedSecond s round a b (fun k => q (HAdd.hAdd.{0, 0, 0} k 1))
+    (GramExact.roundedFirst s round a (fun k => p (HAdd.hAdd.{0, 0, 0} k 1)) (fun k => q (HAdd.hAdd.{0, 0, 0} k 1))
+      (GramExact.roundedFMA round (HMul.hMul.{0, 0, 0} (↑(a n)) s) (HMul.hMul.{0, 0, 0} (↑(b n)) s)
+        (GramExact.roundedFMA round (HMul.hMul.{0, 0, 0} (↑(Neg.neg.{0} (p 0))) s) (HMul.hMul.{0, 0, 0} (↑(q 0)) s) g))
+      left)
+    right
+'GramExact.roundedUpdate' depends on axioms: [propext, Classical.choice, Quot.sound]
+theorem GramExact.rounded_update_exact : ∀ (s : Real) (M : GramExact.RoundingModel (HMul.hMul.{0, 0, 0} s s)) (n : Nat)
+  (B : Int) (p q a b : Nat → Int),
+  LE.le.{0} 0 B →
+    (∀ (k : Nat), LE.le.{0} (abs.{0} (p k)) B) →
+      (∀ (k : Nat), LE.le.{0} (abs.{0} (q k)) B) →
+        (∀ (k : Nat), LE.le.{0} (abs.{0} (a k)) B) →
+          (∀ (k : Nat), LE.le.{0} (abs.{0} (b k)) B) →
+            LE.le.{0} (HMul.hMul.{0, 0, 0} (↑(HAdd.hAdd.{0, 0, 0} n 1)) (HPow.hPow.{0, 0, 0} B 2))
+                (HPow.hPow.{0, 0, 0} 2 53) →
+              ∀ (left right : List.{0} Nat),
+                List.Nodup.{0} left →
+                  List.Nodup.{0} right →
+                    Eq.{1} (List.toFinset.{0} left) (GramExact.support.{0} n a fun k => p (HAdd.hAdd.{0, 0, 0} k 1)) →
+                      Eq.{1} (List.toFinset.{0} right)
+                          (GramExact.support.{0} n b fun k => q (HAdd.hAdd.{0, 0, 0} k 1)) →
+                        Eq.{1}
+                          (GramExact.roundedUpdate s (GramExact.RoundingModel.round M) n p q a b
+                            (GramExact.scaled s (GramExact.intDot (HAdd.hAdd.{0, 0, 0} n 1) p q)) left right)
+                          (GramExact.scaled s (GramExact.intDot (HAdd.hAdd.{0, 0, 0} n 1) a b)) :=
+⋯
+'GramExact.rounded_update_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+def GramExact.roundedReconstruct : Real → (Real → Real) → Nat → (Nat → Nat → Int) → (Nat → Real) → Nat → Nat → Real :=
+fun s round n A anchor x x_1 =>
+  Nat.brecOn.{1} (motive := fun x => Nat → Real) x
+    (fun x f x_2 =>
+      (match (motive := (x : Nat) → Nat → Nat.below.{1} (motive := fun x => Nat → Real) x → Real) x, x_2 with
+        | i, 0 => fun x => anchor i
+        | 0, Nat.succ j => fun x =>
+          GramExact.scaled s (GramExact.intDot (HAdd.hAdd.{0, 0, 0} n 1) (A 0) (A (HAdd.hAdd.{0, 0, 0} j 1)))
+        | Nat.succ i, Nat.succ j => fun x =>
+          GramExact.roundedUpdate s round n (A i) (A j) (A (HAdd.hAdd.{0, 0, 0} i 1)) (A (HAdd.hAdd.{0, 0, 0} j 1))
+            (x.1 j) (GramExact.supportList n (A (HAdd.hAdd.{0, 0, 0} i 1)) fun k => A i (HAdd.hAdd.{0, 0, 0} k 1))
+            (GramExact.supportList n (A (HAdd.hAdd.{0, 0, 0} j 1)) fun k => A j (HAdd.hAdd.{0, 0, 0} k 1)))
+        f)
+    x_1
+'GramExact.roundedReconstruct' depends on axioms: [propext, Classical.choice, Quot.sound]
+theorem GramExact.rounded_reconstruction : ∀ (s : Real) (M : GramExact.RoundingModel (HMul.hMul.{0, 0, 0} s s))
+  (n : Nat) (B : Int) (A : Nat → Nat → Int),
+  LE.le.{0} 0 B →
+    (∀ (i k : Nat), LE.le.{0} (abs.{0} (A i k)) B) →
+      LE.le.{0} (HMul.hMul.{0, 0, 0} (↑(HAdd.hAdd.{0, 0, 0} n 1)) (HPow.hPow.{0, 0, 0} B 2))
+          (HPow.hPow.{0, 0, 0} 2 53) →
+        ∀ (anchor : Nat → Real),
+          (∀ (i : Nat),
+              Eq.{1} (anchor i) (GramExact.scaled s (GramExact.intDot (HAdd.hAdd.{0, 0, 0} n 1) (A i) (A 0)))) →
+            ∀ (i j : Nat),
+              LE.le.{0} j i →
+                Eq.{1} (GramExact.roundedReconstruct s (GramExact.RoundingModel.round M) n A anchor i j)
+                  (GramExact.scaled s (GramExact.intDot (HAdd.hAdd.{0, 0, 0} n 1) (A i) (A j))) :=
+⋯
+'GramExact.rounded_reconstruction' depends on axioms: [propext, Classical.choice, Quot.sound]
+theorem GramExact.computed_anchor_exact : ∀ (s : Real) (M : GramExact.RoundingModel (HMul.hMul.{0, 0, 0} s s)) (n : Nat)
+  (B : Int) (A : Nat → Nat → Int),
+  LE.le.{0} 0 B →
+    (∀ (i k : Nat), LE.le.{0} (abs.{0} (A i k)) B) →
+      LE.le.{0} (HMul.hMul.{0, 0, 0} (↑n) (HPow.hPow.{0, 0, 0} B 2)) (HPow.hPow.{0, 0, 0} 2 53) →
+        ∀ (i : Nat),
+          Eq.{1}
+            (GramExact.roundedAnchor s (GramExact.RoundingModel.round M) (A i) (A 0)
+              (Finset.toList.{0} (Finset.range n)))
+            (GramExact.scaled s (GramExact.intDot n (A i) (A 0))) :=
+⋯
+'GramExact.computed_anchor_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+def GramExact.roundedGram : Real → (Real → Real) → Nat → (Nat → Nat → Int) → Nat → Nat → Real :=
+fun s round N A i j =>
+  match N with
+  | 0 => 0
+  | Nat.succ n =>
+    GramExact.roundedReconstruct s round n A
+      (fun r =>
+        GramExact.roundedAnchor s round (A r) (A 0) (Finset.toList.{0} (Finset.range (HAdd.hAdd.{0, 0, 0} n 1))))
+      i j
+'GramExact.roundedGram' depends on axioms: [propext, Classical.choice, Quot.sound]
+theorem GramExact.rounded_gram_exact : ∀ (s : Real) (N : Nat) (B : Int) (A : Nat → Nat → Int)
+  (M : GramExact.RoundingModel (HMul.hMul.{0, 0, 0} s s)),
+  LE.le.{0} 0 B →
+    (∀ (i k : Nat), LE.le.{0} (abs.{0} (A i k)) B) →
+      LE.le.{0} (HMul.hMul.{0, 0, 0} (↑N) (HPow.hPow.{0, 0, 0} B 2)) (HPow.hPow.{0, 0, 0} 2 53) →
+        ∀ (i j : Nat),
+          LE.le.{0} j i →
+            Eq.{1} (GramExact.roundedGram s (GramExact.RoundingModel.round M) N A i j)
+              (GramExact.scaled s (GramExact.intDot N (A i) (A j))) :=
+⋯
+'GramExact.rounded_gram_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+theorem GramExact.scaled_dot : ∀ (s : Real) (N : Nat) (a b : Nat → Int),
+  Eq.{1} (GramExact.scaled s (GramExact.intDot N a b))
+    (GramExact.dot N (fun k => HMul.hMul.{0, 0, 0} (↑(a k)) s) fun k => HMul.hMul.{0, 0, 0} (↑(b k)) s) :=
+⋯
+'GramExact.scaled_dot' depends on axioms: [propext, Classical.choice, Quot.sound]
+theorem GramExact.binary64_gram_exact : ∀ (I : GramExact.Binary64Bridge) (e : Int),
+  LE.le.{0} (-400) e →
+    LE.le.{0} e 200 →
+      ∀ (N : Nat) (B : Int) (A : Nat → Nat → Int),
+        LE.le.{0} 0 B →
+          (∀ (i k : Nat), LE.le.{0} (abs.{0} (A i k)) B) →
+            LE.le.{0} (HMul.hMul.{0, 0, 0} (↑N) (HPow.hPow.{0, 0, 0} B 2)) (HPow.hPow.{0, 0, 0} 2 53) →
+              ∀ (i j : Nat),
+                LE.le.{0} j i →
+                  Eq.{1} (GramExact.roundedGram (GramExact.dyadicScale e) (GramExact.Binary64Bridge.round I) N A i j)
+                    (GramExact.dot N (fun k => HMul.hMul.{0, 0, 0} (↑(A i k)) (GramExact.dyadicScale e)) fun k =>
+                      HMul.hMul.{0, 0, 0} (↑(A j k)) (GramExact.dyadicScale e)) :=
+⋯
+'GramExact.binary64_gram_exact' depends on axioms: [propext, Classical.choice, Quot.sound]

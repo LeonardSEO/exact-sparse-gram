@@ -1,0 +1,237 @@
+[
+  {
+    "original": "gram_research/src/lattice_sequential.c",
+    "release": "src/lattice_sequential.c",
+    "sha256": "7550990a7f6dd82fbd0e58580c9a6639eef7ffc07d841b56ae9cf189b394bde5"
+  },
+  {
+    "original": "gram_research/src/lattice_benchmark.c",
+    "release": "benchmarks/round2/src/lattice_benchmark.c",
+    "sha256": "5f89c6a6bf16a6f4dd53e8592de79f3e550a92219b7cceff72a02dfb97f4c1e5"
+  },
+  {
+    "original": "gram_research/src/benchmark.c",
+    "release": "benchmarks/round2/src/benchmark.c",
+    "sha256": "21764ac40f83c93158ed2407c44c9c1be22e6ccd94346b34967814c16893afab"
+  },
+  {
+    "original": "gram_research/src/lattice_exact.c",
+    "release": "benchmarks/round2/src/lattice_exact.c",
+    "sha256": "3402d7c6531fdb17178493df4205b54aaa580fcc6f6d99aa3a66cffa3e3da540"
+  },
+  {
+    "original": "gram_research/src/lattice_substitute.c",
+    "release": "benchmarks/round2/src/lattice_substitute.c",
+    "sha256": "d1400c003886f0e57102e75bb7e442b7329cbad26d6d796b844b9bf877f1ba95"
+  },
+  {
+    "original": "gram_research/src/lattice_sequential.c",
+    "release": "benchmarks/round2/src/lattice_sequential.c",
+    "sha256": "7550990a7f6dd82fbd0e58580c9a6639eef7ffc07d841b56ae9cf189b394bde5"
+  },
+  {
+    "original": "gram_research/src/joint_kernel.c",
+    "release": "benchmarks/round2/src/joint_kernel.c",
+    "sha256": "e3aa02beff68e108dc750058e54e7c2b2f495638489544c3a65c231f192e4306"
+  },
+  {
+    "original": "gram_research/src/communication_skinny.c",
+    "release": "benchmarks/round2/src/communication_skinny.c",
+    "sha256": "d8d3b900dc3c675d9c07ee45847c13f9d2e7dc7477b32bd7ac9802d0bce490b7"
+  },
+  {
+    "original": "gram_research/src/adapters.c",
+    "release": "benchmarks/round2/src/adapters.c",
+    "sha256": "07793c51d9e0a767420b5a002885f1052e7034346b9d068a2cdeea5f1bdd89fd"
+  },
+  {
+    "original": "gram_research/src/algebra_hankel.c",
+    "release": "benchmarks/round2/src/algebra_hankel.c",
+    "sha256": "53a7e2b2b6da99c7e68e035c64061c3cc7453bd25990182f9342448c6fed6905"
+  },
+  {
+    "original": "gram_research/src/numerical_guard.c",
+    "release": "benchmarks/round2/src/numerical_guard.c",
+    "sha256": "b66ddcfd394fac623b2af72cbca4c8085266a67c235e31652e392a8fb4ddd678"
+  },
+  {
+    "original": "gram_research/src/algebra_sparse.c",
+    "release": "benchmarks/round2/src/algebra_sparse.c",
+    "sha256": "ded6df9224b59148c39996fccda5708350a03b7b921db095510056b9bb50e773"
+  },
+  {
+    "original": "gram_research/src/numerical_sparse.c",
+    "release": "benchmarks/round2/src/numerical_sparse.c",
+    "sha256": "594e0efbce82ed0af1b56f236f26cbe8e2878cf0f042b55c2fe6664343da8d34"
+  },
+  {
+    "original": "gram_research/src/communication_guard.c",
+    "release": "benchmarks/round2/src/communication_guard.c",
+    "sha256": "0fb9498f0e0f92494995652434161f9d82623f99565cb9852e01e8752641a77e"
+  },
+  {
+    "original": "gram_research/src/communication_guard_fast.c",
+    "release": "benchmarks/round2/src/communication_guard_fast.c",
+    "sha256": "40b33b64d12eac5fa5a3ca2e2acd00b317abd2c1c790b8f36c20430edcd912ae"
+  },
+  {
+    "original": "gram_research/src/numerical_sparse_fast.c",
+    "release": "benchmarks/round2/src/numerical_sparse_fast.c",
+    "sha256": "7a706721832076901a1845031e6e5ea2e8620ad821b40ca24eddc02b0746b5d0"
+  },
+  {
+    "original": "gram_research/results/lattice_final_all.jsonl",
+    "release": "data/round2/lattice_final_all.jsonl",
+    "sha256": "a3e585c5f496309574ebdc1630e278d35a20e2b759b5e355e25edcdead86b948"
+  },
+  {
+    "original": "gram_research/results/lattice_environment_all.json",
+    "release": "data/round2/lattice_environment_all.json",
+    "sha256": "38d1962c0d41fb5a76df5204791fdb84ec54c529e989e1f1f5ffbc819265a16b"
+  },
+  {
+    "original": "gram_research/results/lattice_frozen_manifest.json",
+    "release": "data/round2/lattice_frozen_manifest.json",
+    "sha256": "63e1f6a7846b8c4e527d10989093cb8bf678cbeca7d104ad2dc515912f8de252"
+  },
+  {
+    "original": "gram_research/REPORT_EXACT.md",
+    "release": "evidence/original/REPORT_EXACT.md",
+    "sha256": "c93f86382ee1074875f18b85a925455e64611a4d2aaff9dd3bf6406df69ba89d"
+  },
+  {
+    "original": "gram_research/PROTOCOL.md",
+    "release": "evidence/original/PROTOCOL.md",
+    "sha256": "6291eb8a8ec1f0525fd201b63d6dde1348d0f2538d3fd84ce33aab2332d94c75"
+  },
+  {
+    "original": "gram_research/VERIFICATION.md",
+    "release": "evidence/original/VERIFICATION.md",
+    "sha256": "d9af2fc325892db68cbeb23b090f55e348a09eb3ba1392901691010b75ea2d55"
+  },
+  {
+    "original": "gram_research/MANIFEST.json",
+    "release": "evidence/original/MANIFEST.json",
+    "sha256": "8c63da7fe8dfc975f9a848f3eb70f7c50e8cb9b847567f95f7807e3a588044f0"
+  },
+  {
+    "original": "gram_research/run_lattice_benchmarks.py",
+    "release": "evidence/original/run_lattice_benchmarks.py",
+    "sha256": "d8396fd6ecdce1f0930ce7f6516ff3d7a7c7f5d15f0ab29be5e60835740832f3"
+  },
+  {
+    "original": "gram_research/summarize_lattice.py",
+    "release": "evidence/original/summarize_lattice.py",
+    "sha256": "f3901698f73bf43e5084bbc29b780b62ee7008964e56f783dbd258f2099e9732"
+  },
+  {
+    "original": "gram_research/build.sh",
+    "release": "evidence/original/build.sh",
+    "sha256": "1b331a07efbdf3fd02b8e0ecc6ae79e1ae6abade236ad4af0a41362e42a83c2a"
+  },
+  {
+    "original": "gram_research/verification/sequential_verify.py",
+    "release": "evidence/original/verification/sequential_verify.py",
+    "sha256": "d733494227cb2407c9c5cde40653b6861da45ca9c69d90434c95e01215c7822b"
+  },
+  {
+    "original": "gram_research/verification/sequential_results.json",
+    "release": "evidence/original/verification/sequential_results.json",
+    "sha256": "846fb4625bf8549aab3dd032f80d5c37a45620cdb4ffa183f2e426e1c40926e4"
+  },
+  {
+    "original": "gram_research/verification/algebra_lattice_full_entry.c",
+    "release": "evidence/original/verification/algebra_lattice_full_entry.c",
+    "sha256": "17c338e3dd3941c6bad7bf14ad548e41d90af9d8f3ef66d5948f866069ef0b37"
+  },
+  {
+    "original": "gram_research/verification/algebra_lattice_full_entry_verify.py",
+    "release": "evidence/original/verification/algebra_lattice_full_entry_verify.py",
+    "sha256": "75e3b81750e889862d2f8cb453e2a52b4c0cd47ae2dc99912bc6ab2ecd5566d4"
+  },
+  {
+    "original": "gram_research/verification/algebra_lattice_full_entry_results.json",
+    "release": "evidence/original/verification/algebra_lattice_full_entry_results.json",
+    "sha256": "c64f64465d5e670620e7a19d03f5be97044b161820c5ed63fa8f6ad62015c046"
+  },
+  {
+    "original": "gram_research/verification/algebra_lattice_full_entry_output.jsonl",
+    "release": "evidence/original/verification/algebra_lattice_full_entry_output.jsonl",
+    "sha256": "4f611a7a87d0c916a407f62fc16fdd48e73f6754f4c01633b9912fca2b091d9a"
+  },
+  {
+    "original": "gram_research/verification/algebra_lattice_full_entry_errors.tsv",
+    "release": "evidence/original/verification/algebra_lattice_full_entry_errors.tsv",
+    "sha256": "ceb8b805406689b68b0385bbdff1a635af624279e2ab2e550dc14cc8a173f6ce"
+  },
+  {
+    "original": "gram_research/verification/lattice_results.json",
+    "release": "evidence/original/verification/lattice_results.json",
+    "sha256": "dd635b2be28320761cf9243f3c4d2c7f937ecc6b0a44668eb182c48809c563ff"
+  },
+  {
+    "original": "gram_research/verification/substitute_results.json",
+    "release": "evidence/original/verification/substitute_results.json",
+    "sha256": "8256a838327aac705063262ea4f9c6c33fc1419610e8c281a20aa848126ad24d"
+  },
+  {
+    "original": "gram_research/results/round2_verification.log",
+    "release": "evidence/original/results/round2_verification.log",
+    "sha256": "eb6648b401d5d47ff36c6e52635749811e8f85910af167169b44f84d0e0e8aa9"
+  },
+  {
+    "original": "gram_research/results/lattice_summary.csv",
+    "release": "evidence/original/results/lattice_summary.csv",
+    "sha256": "066f853c9e87051eaccc7620da8d5de2322ff763503969cb3d899b038932f1ff"
+  },
+  {
+    "original": "gram_research/results/lattice_selected_measurements.md",
+    "release": "evidence/original/results/lattice_selected_measurements.md",
+    "sha256": "8dfdd243616752d07b82bc949d2b42ecb210a102d758b864f95b66d4b8f97530"
+  },
+  {
+    "original": "gram_research/results/lattice_statistics.json",
+    "release": "evidence/original/results/lattice_statistics.json",
+    "sha256": "967830e7cbbbbdfb758cdc4221e4b389faa7a76b730edff7d86debc0e7a58ae6"
+  },
+  {
+    "original": "gram_research/notes/lattice_sequential.md",
+    "release": "evidence/original/notes/lattice_sequential.md",
+    "sha256": "4c9adcf7bc97370b27ea1a5da9231a61c237b2ffc71f6041eb830c6223488e85"
+  },
+  {
+    "original": "gram_research/notes/sequential_traffic.md",
+    "release": "evidence/original/notes/sequential_traffic.md",
+    "sha256": "f58a159750fc5d017b2aa0af84d2cf5424dcf6f7141ba99dcde9899397e65954"
+  },
+  {
+    "original": "gram_research/notes/completion_audit_round2.md",
+    "release": "evidence/original/notes/completion_audit_round2.md",
+    "sha256": "bb8915528a8a6660983024b8a69b8c5369bad687db9404cfa6ffbb10852ecef8"
+  },
+  {
+    "original": "gram_research/verification/numerical_results.json",
+    "release": "evidence/original/verification/numerical_results.json",
+    "sha256": "2356271a57055304ad06c712879bf39ab4af83af5bbfe198377117b31426e629"
+  },
+  {
+    "original": "gram_research/verification/numerical_sparse_results.json",
+    "release": "evidence/original/verification/numerical_sparse_results.json",
+    "sha256": "5187034c2bd3a190f717588449c8008df518941e8d07c8b3a8cc00ea813535b4"
+  },
+  {
+    "original": "gram_research/verification/numerical_sparse_fast_results.json",
+    "release": "evidence/original/verification/numerical_sparse_fast_results.json",
+    "sha256": "67af56d72c26b969c0a9eda7c5fd573dd0225663c0d1af054f690962b3e674aa"
+  },
+  {
+    "original": "gram_research/verification/communication_guard_results.json",
+    "release": "evidence/original/verification/communication_guard_results.json",
+    "sha256": "0a2d4271671d4dd3c3bc5858681635eeb2fc80cec64dc59853fe251faf637373"
+  },
+  {
+    "original": "gram_research/verification/communication_guard_fast_results.json",
+    "release": "evidence/original/verification/communication_guard_fast_results.json",
+    "sha256": "0a2d4271671d4dd3c3bc5858681635eeb2fc80cec64dc59853fe251faf637373"
+  }
+]

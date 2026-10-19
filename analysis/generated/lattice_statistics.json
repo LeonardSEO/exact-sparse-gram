@@ -1,0 +1,568 @@
+{
+  "runs": 230,
+  "paired_median_wins_both": 150,
+  "conditional_interval_wins_both": 150,
+  "groups": [
+    {
+      "evaluation_set": "distribution",
+      "family": "innov",
+      "m": 512,
+      "n": 4096,
+      "q_cap": 2,
+      "dist": 0,
+      "output_full": 1,
+      "runs": 5,
+      "syrk_min_median_max": [
+        1.5334978949034341,
+        1.547785017341774,
+        1.5668552295999443
+      ],
+      "best_vendor_min_median_max": [
+        1.5334978949034341,
+        1.547785017341774,
+        1.5668552295999443
+      ]
+    },
+    {
+      "evaluation_set": "distribution",
+      "family": "innov",
+      "m": 512,
+      "n": 4096,
+      "q_cap": 2,
+      "dist": 1,
+      "output_full": 1,
+      "runs": 5,
+      "syrk_min_median_max": [
+        1.454804135356775,
+        1.5537866949430374,
+        1.5976986811688652
+      ],
+      "best_vendor_min_median_max": [
+        1.454804135356775,
+        1.5537866949430374,
+        1.5976986811688652
+      ]
+    },
+    {
+      "evaluation_set": "distribution",
+      "family": "innov",
+      "m": 512,
+      "n": 4096,
+      "q_cap": 2,
+      "dist": 2,
+      "output_full": 1,
+      "runs": 5,
+      "syrk_min_median_max": [
+        1.6351576111772665,
+        1.6542614285493928,
+        1.7492558546942347
+      ],
+      "best_vendor_min_median_max": [
+        1.6351576111772665,
+        1.6542614285493928,
+        1.7492558546942347
+      ]
+    },
+    {
+      "evaluation_set": "distribution",
+      "family": "innov",
+      "m": 512,
+      "n": 4096,
+      "q_cap": 2,
+      "dist": 3,
+      "output_full": 1,
+      "runs": 5,
+      "syrk_min_median_max": [
+        1.8367891220892925,
+        1.9085059696573365,
+        2.0017817558217583
+      ],
+      "best_vendor_min_median_max": [
+        1.8367891220892925,
+        1.9085059696573365,
+        2.0017817558217583
+      ]
+    },
+    {
+      "evaluation_set": "distribution",
+      "family": "innov",
+      "m": 512,
+      "n": 4096,
+      "q_cap": 2,
+      "dist": 4,
+      "output_full": 1,
+      "runs": 5,
+      "syrk_min_median_max": [
+        1.4705416639555244,
+        1.6145692138785372,
+        1.6406326468940753
+      ],
+      "best_vendor_min_median_max": [
+        1.4705416639555244,
+        1.6145692138785372,
+        1.6406326468940753
+      ]
+    },
+    {
+      "evaluation_set": "distribution",
+      "family": "windows",
+      "m": 512,
+      "n": 4096,
+      "q_cap": 2,
+      "dist": 0,
+      "output_full": 1,
+      "runs": 5,
+      "syrk_min_median_max": [
+        1.5203949734452724,
+        1.5960018246502572,
+        1.6286209261476088
+      ],
+      "best_vendor_min_median_max": [
+        1.5203949734452724,
+        1.5960018246502572,
+        1.6286209261476088
+      ]
+    },
+    {
+      "evaluation_set": "distribution",
+      "family": "windows",
+      "m": 512,
+      "n": 4096,
+      "q_cap": 2,
+      "dist": 1,
+      "output_full": 1,
+      "runs": 5,
+      "syrk_min_median_max": [
+        1.6104495782127835,
+        1.6601702355147352,
+        1.693905667610012
+      ],
+      "best_vendor_min_median_max": [
+        1.6104495782127835,
+        1.6601702355147352,
+        1.693905667610012
+      ]
+    },
+    {
+      "evaluation_set": "distribution",
+      "family": "windows",
+      "m": 512,
+      "n": 4096,
+      "q_cap": 2,
+      "dist": 2,
+      "output_full": 1,
+      "runs": 5,
+      "syrk_min_median_max": [
+        1.5875983175217727,
+        1.643565305262119,
+        1.6565825246208352
+      ],
+      "best_vendor_min_median_max": [
+        1.5875983175217727,
+        1.643565305262119,
+        1.6565825246208352
+      ]
+    },
+    {
+      "evaluation_set": "distribution",
+      "family": "windows",
+      "m": 512,
+      "n": 4096,
+      "q_cap": 2,
+      "dist": 3,
+      "output_full": 1,
+      "runs": 5,
+      "syrk_min_median_max": [
+        1.8863286623568631,
+        1.9295113440627634,
+        1.9493004423454467
+      ],
+      "best_vendor_min_median_max": [
+        1.8863286623568631,
+        1.9295113440627634,
+        1.9493004423454467
+      ]
+    },
+    {
+      "evaluation_set": "distribution",
+      "family": "windows",
+      "m": 512,
+      "n": 4096,
+      "q_cap": 2,
+      "dist": 4,
+      "output_full": 1,
+      "runs": 5,
+      "syrk_min_median_max": [
+        1.6538059109540162,
+        1.7165849215068762,
+        1.8770251201013815
+      ],
+      "best_vendor_min_median_max": [
+        1.6538059109540162,
+        1.7165849215068762,
+        1.8770251201013815
+      ]
+    },
+    {
+      "evaluation_set": "heldout",
+      "family": "innov",
+      "m": 192,
+      "n": 768,
+      "q_cap": 1,
+      "dist": -1,
+      "output_full": 0,
+      "runs": 10,
+      "syrk_min_median_max": [
+        0.6342932512202091,
+        0.6405786902856017,
+        0.6649129024546866
+      ],
+      "best_vendor_min_median_max": [
+        0.6342932512202091,
+        0.6405786902856017,
+        0.6649129024546866
+      ]
+    },
+    {
+      "evaluation_set": "heldout",
+      "family": "innov",
+      "m": 192,
+      "n": 768,
+      "q_cap": 1,
+      "dist": -1,
+      "output_full": 1,
+      "runs": 10,
+      "syrk_min_median_max": [
+        0.6735014915901254,
+        0.6840108885485636,
+        0.6910420629410677
+      ],
+      "best_vendor_min_median_max": [
+        0.6735014915901254,
+        0.6840108885485636,
+        0.6940075202599396
+      ]
+    },
+    {
+      "evaluation_set": "heldout",
+      "family": "innov",
+      "m": 192,
+      "n": 768,
+      "q_cap": 2,
+      "dist": -1,
+      "output_full": 0,
+      "runs": 10,
+      "syrk_min_median_max": [
+        0.5703911434890274,
+        0.5748690640824479,
+        0.6538365187376329
+      ],
+      "best_vendor_min_median_max": [
+        0.5703911434890274,
+        0.5748690640824479,
+        0.6538365187376329
+      ]
+    },
+    {
+      "evaluation_set": "heldout",
+      "family": "innov",
+      "m": 192,
+      "n": 768,
+      "q_cap": 2,
+      "dist": -1,
+      "output_full": 1,
+      "runs": 10,
+      "syrk_min_median_max": [
+        0.5924315709200936,
+        0.6076915545241437,
+        0.6123723782511103
+      ],
+      "best_vendor_min_median_max": [
+        0.5924315709200936,
+        0.6076915545241437,
+        0.6123723782511103
+      ]
+    },
+    {
+      "evaluation_set": "heldout",
+      "family": "innov",
+      "m": 192,
+      "n": 768,
+      "q_cap": 4,
+      "dist": -1,
+      "output_full": 0,
+      "runs": 10,
+      "syrk_min_median_max": [
+        0.4551726995304185,
+        0.4640160772768026,
+        0.548371751984726
+      ],
+      "best_vendor_min_median_max": [
+        0.4551726995304185,
+        0.4640160772768026,
+        0.548371751984726
+      ]
+    },
+    {
+      "evaluation_set": "heldout",
+      "family": "innov",
+      "m": 192,
+      "n": 768,
+      "q_cap": 4,
+      "dist": -1,
+      "output_full": 1,
+      "runs": 10,
+      "syrk_min_median_max": [
+        0.48917107094090784,
+        0.49681489964173625,
+        0.5065413246839002
+      ],
+      "best_vendor_min_median_max": [
+        0.48917107094090784,
+        0.49608447335533085,
+        0.5065413246839002
+      ]
+    },
+    {
+      "evaluation_set": "heldout",
+      "family": "innov",
+      "m": 384,
+      "n": 2048,
+      "q_cap": 1,
+      "dist": -1,
+      "output_full": 0,
+      "runs": 10,
+      "syrk_min_median_max": [
+        1.1980120951512374,
+        1.2122461815596055,
+        1.2215494873219617
+      ],
+      "best_vendor_min_median_max": [
+        1.1980120951512374,
+        1.2122461815596055,
+        1.2215494873219617
+      ]
+    },
+    {
+      "evaluation_set": "heldout",
+      "family": "innov",
+      "m": 384,
+      "n": 2048,
+      "q_cap": 1,
+      "dist": -1,
+      "output_full": 1,
+      "runs": 10,
+      "syrk_min_median_max": [
+        1.1967279322540132,
+        1.2035816515452633,
+        1.2771370451559623
+      ],
+      "best_vendor_min_median_max": [
+        1.1967279322540132,
+        1.2035816515452633,
+        1.2771370451559623
+      ]
+    },
+    {
+      "evaluation_set": "heldout",
+      "family": "innov",
+      "m": 384,
+      "n": 2048,
+      "q_cap": 2,
+      "dist": -1,
+      "output_full": 0,
+      "runs": 10,
+      "syrk_min_median_max": [
+        1.0729172830076426,
+        1.112413683385779,
+        1.2457663830156576
+      ],
+      "best_vendor_min_median_max": [
+        1.0729172830076426,
+        1.112413683385779,
+        1.2457663830156576
+      ]
+    },
+    {
+      "evaluation_set": "heldout",
+      "family": "innov",
+      "m": 384,
+      "n": 2048,
+      "q_cap": 2,
+      "dist": -1,
+      "output_full": 1,
+      "runs": 10,
+      "syrk_min_median_max": [
+        1.1022331686900175,
+        1.1162800318710213,
+        1.1454208731549662
+      ],
+      "best_vendor_min_median_max": [
+        1.1022331686900175,
+        1.1162800318710213,
+        1.1454208731549662
+      ]
+    },
+    {
+      "evaluation_set": "heldout",
+      "family": "innov",
+      "m": 384,
+      "n": 2048,
+      "q_cap": 4,
+      "dist": -1,
+      "output_full": 0,
+      "runs": 10,
+      "syrk_min_median_max": [
+        0.9244747342119003,
+        0.951227630799961,
+        0.9975658447758429
+      ],
+      "best_vendor_min_median_max": [
+        0.9244747342119003,
+        0.951227630799961,
+        0.9975658447758429
+      ]
+    },
+    {
+      "evaluation_set": "heldout",
+      "family": "innov",
+      "m": 384,
+      "n": 2048,
+      "q_cap": 4,
+      "dist": -1,
+      "output_full": 1,
+      "runs": 10,
+      "syrk_min_median_max": [
+        0.9515321091834845,
+        0.958211818724279,
+        0.9709864945304651
+      ],
+      "best_vendor_min_median_max": [
+        0.9515321091834845,
+        0.958211818724279,
+        0.9709864945304651
+      ]
+    },
+    {
+      "evaluation_set": "heldout",
+      "family": "innov",
+      "m": 768,
+      "n": 8192,
+      "q_cap": 1,
+      "dist": -1,
+      "output_full": 0,
+      "runs": 10,
+      "syrk_min_median_max": [
+        2.303280953683339,
+        2.495774855723333,
+        2.572899020693413
+      ],
+      "best_vendor_min_median_max": [
+        2.303280953683339,
+        2.495774855723333,
+        2.572899020693413
+      ]
+    },
+    {
+      "evaluation_set": "heldout",
+      "family": "innov",
+      "m": 768,
+      "n": 8192,
+      "q_cap": 1,
+      "dist": -1,
+      "output_full": 1,
+      "runs": 10,
+      "syrk_min_median_max": [
+        2.4179549135313185,
+        2.477459451412126,
+        2.83973821606918
+      ],
+      "best_vendor_min_median_max": [
+        2.4179549135313185,
+        2.477459451412126,
+        3.0829167668532467
+      ]
+    },
+    {
+      "evaluation_set": "heldout",
+      "family": "innov",
+      "m": 768,
+      "n": 8192,
+      "q_cap": 2,
+      "dist": -1,
+      "output_full": 0,
+      "runs": 10,
+      "syrk_min_median_max": [
+        1.9579551719878885,
+        2.204131999811511,
+        2.2964016418350406
+      ],
+      "best_vendor_min_median_max": [
+        1.9579551719878885,
+        2.204131999811511,
+        2.2964016418350406
+      ]
+    },
+    {
+      "evaluation_set": "heldout",
+      "family": "innov",
+      "m": 768,
+      "n": 8192,
+      "q_cap": 2,
+      "dist": -1,
+      "output_full": 1,
+      "runs": 10,
+      "syrk_min_median_max": [
+        1.9173298422432448,
+        2.1657044866176003,
+        2.347784182052875
+      ],
+      "best_vendor_min_median_max": [
+        1.9173298422432448,
+        2.1657044866176003,
+        2.347784182052875
+      ]
+    },
+    {
+      "evaluation_set": "heldout",
+      "family": "innov",
+      "m": 768,
+      "n": 8192,
+      "q_cap": 4,
+      "dist": -1,
+      "output_full": 0,
+      "runs": 10,
+      "syrk_min_median_max": [
+        1.6095597126440435,
+        1.8259332040594813,
+        1.8672371057202306
+      ],
+      "best_vendor_min_median_max": [
+        1.6095597126440435,
+        1.8259332040594813,
+        1.8672371057202306
+      ]
+    },
+    {
+      "evaluation_set": "heldout",
+      "family": "innov",
+      "m": 768,
+      "n": 8192,
+      "q_cap": 4,
+      "dist": -1,
+      "output_full": 1,
+      "runs": 10,
+      "syrk_min_median_max": [
+        1.6125712051419112,
+        1.8113728465528314,
+        2.5893945684029447
+      ],
+      "best_vendor_min_median_max": [
+        1.6125712051419112,
+        1.8113728465528314,
+        2.5505030221497336
+      ]
+    }
+  ],
+  "summarizer_sha256": "576e254f648b09a02b1bd265689da1d3a3c95397962edc93935c010b33461612"
+}

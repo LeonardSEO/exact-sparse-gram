@@ -1,0 +1,17 @@
+{
+  "isolated_project": "/var/folders/wv/0cp27z9s525b3y5wtz9v4m080000gn/T/gram-lean-independent-e508rbud",
+  "source_project": "/Users/leonard/Downloads/onderzoek_drie_problemen/gram_exact_release/lean",
+  "dependency_cache": "/Users/leonard/Downloads/onderzoek_drie_problemen/fhe_quadratic_release/lean/.lake/packages",
+  "project_artifacts_copied": false,
+  "source_sha256": {
+    "lean-toolchain": "42779d67b81608af8a12aa4328d2ab47ca201925b3b2bd68369587b5340bb434",
+    "lakefile.toml": "f4ef89e36ba9acb00165f75222dc59d448077c51aeb96a518b5afc02e8ffb221",
+    "lake-manifest.json": "bc7efed4f94db0cd5c19025548628c64ca89c71f5f5740076aeb5343a0634e55",
+    "GramExact.lean": "3a86f326cee0ed4f5cf98619a5f1174384f6cf71d4d9b9b5aa9b6cb4872d57a8",
+    "GramExact/Core.lean": "3b8db566cc56a0632d65061dcfa51ea5471d47a5c1dc94e9f6030bfdd63f2527",
+    "GramExact/Bounds.lean": "774f935eb28af21629aeb89a3d8f71d3ef5fb4751acb4f8c8cd9ec671a89946a",
+    "GramExact/Arithmetic.lean": "ae9c94dd0659c13eeef809480e0efce707f0989c76aaee4e7a4602e91bd0f8d0",
+    "GramExact/Bridge.lean": "d8dde15da0889422c140d90991fcbe01a9816dce47aac334d5ff159a8467bb67",
+    "evidence/Inspect.lean": "ac340ba85113a2de349011c689450081978e4a134c66a707dcb7be22465159aa"
+  }
+}

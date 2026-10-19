@@ -1,0 +1,146 @@
+{
+  "status": "pass",
+  "mode": "input diagnostic; no clock or kernel calls",
+  "records": [
+    {
+      "family": "windows",
+      "dist": 0,
+      "seed": 20261201,
+      "input_fingerprint_fnv1a64": "644f93ef4b69f9ab",
+      "generator_final_state": 17211194423924380397
+    },
+    {
+      "family": "windows",
+      "dist": 0,
+      "seed": 20261202,
+      "input_fingerprint_fnv1a64": "c32f10a631313cfc",
+      "generator_final_state": 14474285909660137340
+    },
+    {
+      "family": "windows",
+      "dist": 0,
+      "seed": 20261203,
+      "input_fingerprint_fnv1a64": "8eb677a4f0e98d92",
+      "generator_final_state": 17658115525296533873
+    },
+    {
+      "family": "windows",
+      "dist": 0,
+      "seed": 20261204,
+      "input_fingerprint_fnv1a64": "c5b024ce4d2c7c97",
+      "generator_final_state": 16610479511813451598
+    },
+    {
+      "family": "windows",
+      "dist": 0,
+      "seed": 20261205,
+      "input_fingerprint_fnv1a64": "96b179d134b3af1c",
+      "generator_final_state": 15804401885691816259
+    },
+    {
+      "family": "windows",
+      "dist": 1,
+      "seed": 20261201,
+      "input_fingerprint_fnv1a64": "2845906f32b965cd",
+      "generator_final_state": 17211194423924380397
+    },
+    {
+      "family": "windows",
+      "dist": 1,
+      "seed": 20261202,
+      "input_fingerprint_fnv1a64": "9b334812e52321e1",
+      "generator_final_state": 14474285909660137340
+    },
+    {
+      "family": "windows",
+      "dist": 1,
+      "seed": 20261203,
+      "input_fingerprint_fnv1a64": "fc7f5d219435b571",
+      "generator_final_state": 17658115525296533873
+    },
+    {
+      "family": "windows",
+      "dist": 1,
+      "seed": 20261204,
+      "input_fingerprint_fnv1a64": "3c89f858d0521297",
+      "generator_final_state": 16610479511813451598
+    },
+    {
+      "family": "windows",
+      "dist": 1,
+      "seed": 20261205,
+      "input_fingerprint_fnv1a64": "7b1642e09b0dbe9c",
+      "generator_final_state": 15804401885691816259
+    },
+    {
+      "family": "innov",
+      "dist": 0,
+      "seed": 20261201,
+      "input_fingerprint_fnv1a64": "c881e6b3b979a698",
+      "generator_final_state": 6751303995974140309
+    },
+    {
+      "family": "innov",
+      "dist": 0,
+      "seed": 20261202,
+      "input_fingerprint_fnv1a64": "2bb79ccacc1de70e",
+      "generator_final_state": 3878451293893469567
+    },
+    {
+      "family": "innov",
+      "dist": 0,
+      "seed": 20261203,
+      "input_fingerprint_fnv1a64": "f4bdb5270b2ec5d6",
+      "generator_final_state": 4137172895930321761
+    },
+    {
+      "family": "innov",
+      "dist": 0,
+      "seed": 20261204,
+      "input_fingerprint_fnv1a64": "789bea7d3f616988",
+      "generator_final_state": 15166158522381563931
+    },
+    {
+      "family": "innov",
+      "dist": 0,
+      "seed": 20261205,
+      "input_fingerprint_fnv1a64": "fb231776a65f6ed1",
+      "generator_final_state": 16050885017700750853
+    },
+    {
+      "family": "innov",
+      "dist": 1,
+      "seed": 20261201,
+      "input_fingerprint_fnv1a64": "28609cf74df91eee",
+      "generator_final_state": 6751303995974140309
+    },
+    {
+      "family": "innov",
+      "dist": 1,
+      "seed": 20261202,
+      "input_fingerprint_fnv1a64": "e352e96192a89795",
+      "generator_final_state": 3878451293893469567
+    },
+    {
+      "family": "innov",
+      "dist": 1,
+      "seed": 20261203,
+      "input_fingerprint_fnv1a64": "a85cc66ba861c71c",
+      "generator_final_state": 4137172895930321761
+    },
+    {
+      "family": "innov",
+      "dist": 1,
+      "seed": 20261204,
+      "input_fingerprint_fnv1a64": "e4965fa7b17cff1c",
+      "generator_final_state": 15166158522381563931
+    },
+    {
+      "family": "innov",
+      "dist": 1,
+      "seed": 20261205,
+      "input_fingerprint_fnv1a64": "e9b3b1aa8317d764",
+      "generator_final_state": 16050885017700750853
+    }
+  ]
+}

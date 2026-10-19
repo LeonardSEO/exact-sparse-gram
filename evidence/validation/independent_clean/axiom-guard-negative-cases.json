@@ -1,0 +1,22 @@
+{
+  "sorryAx": {
+    "rejected": true,
+    "reason": "Unsupported axioms for GramExact.mixed: ['sorryAx']"
+  },
+  "custom_axiom": {
+    "rejected": true,
+    "reason": "Unsupported axioms for GramExact.mixed: ['Custom.exactGram']"
+  },
+  "missing": {
+    "rejected": true,
+    "reason": "Axiom report mismatch: missing=['GramExact.mixed']; unexpected=[]"
+  },
+  "duplicate": {
+    "rejected": true,
+    "reason": "Duplicate axiom report: GramExact.mixed"
+  },
+  "malformed": {
+    "rejected": true,
+    "reason": "Axiom report mismatch: missing=['GramExact.mixed']; unexpected=[]"
+  }
+}

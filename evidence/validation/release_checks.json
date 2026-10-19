@@ -1,0 +1,41 @@
+{
+  "status": "passed",
+  "commands": [
+    {
+      "command": "scripts/build.sh",
+      "exit": 0
+    },
+    {
+      "command": "scripts/test.sh",
+      "exit": 0
+    },
+    {
+      "command": "scripts/build.sh --benchmarks",
+      "exit": 0
+    },
+    {
+      "command": "scripts/test_full_oracle.sh",
+      "exit": 0
+    },
+    {
+      "command": "python3 benchmarks/round2/run.py --dry-run",
+      "exit": 0
+    },
+    {
+      "command": "python3 analysis/reproduce.py",
+      "exit": 0
+    }
+  ],
+  "timing": "No performance timing executed; compilation, correctness, dry-run planning and raw-data analysis only.",
+  "platform": "macOS-27.2-arm64-arm-64bit-Mach-O",
+  "python": "3.14.5 (main, May 10 2026, 10:21:34) [Clang 21.0.0 (clang-2100.0.123.102)]",
+  "core_sha256": "7550990a7f6dd82fbd0e58580c9a6639eef7ffc07d841b56ae9cf189b394bde5",
+  "historical_files_verified": 47,
+  "analysis": {
+    "all_run_csv_byte_identical_to_original": true,
+    "runs": 230,
+    "paired_median_wins_both": 150,
+    "conditional_interval_wins_both": 150,
+    "summarizer_sha256": "576e254f648b09a02b1bd265689da1d3a3c95397962edc93935c010b33461612"
+  }
+}

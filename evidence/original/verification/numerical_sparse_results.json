@@ -1,0 +1,78 @@
+{
+  "status": "all exact comparisons passed",
+  "reference": "Fraction.from_float",
+  "tolerance": 2e-12,
+  "cases": [
+    {
+      "name": "bounded_q0",
+      "m": 17,
+      "n": 23,
+      "max_q": 0,
+      "residuals": 0,
+      "repairs": 0,
+      "entries": 153,
+      "maximum_norm_scaled_error": 4.784548152580299e-16
+    },
+    {
+      "name": "bounded_q1",
+      "m": 17,
+      "n": 23,
+      "max_q": 1,
+      "residuals": 16,
+      "repairs": 0,
+      "entries": 153,
+      "maximum_norm_scaled_error": 5.780187273240178e-16
+    },
+    {
+      "name": "bounded_q2",
+      "m": 17,
+      "n": 23,
+      "max_q": 2,
+      "residuals": 32,
+      "repairs": 0,
+      "entries": 153,
+      "maximum_norm_scaled_error": 5.762768118857872e-16
+    },
+    {
+      "name": "bounded_q4",
+      "m": 17,
+      "n": 23,
+      "max_q": 4,
+      "residuals": 64,
+      "repairs": 0,
+      "entries": 153,
+      "maximum_norm_scaled_error": 3.768378833978439e-16
+    },
+    {
+      "name": "wide_dynamic_exact_residuals",
+      "m": 13,
+      "n": 17,
+      "max_q": 1,
+      "residuals": 6,
+      "repairs": 0,
+      "entries": 91,
+      "maximum_norm_scaled_error": 4.9784122222889134e-60
+    },
+    {
+      "name": "huge_impulse_leaves_window",
+      "m": 25,
+      "n": 8,
+      "max_q": 0,
+      "residuals": 0,
+      "repairs": 21,
+      "entries": 325,
+      "maximum_norm_scaled_error": 1.9523311342315753e-30
+    },
+    {
+      "name": "n1_scaled_rows",
+      "m": 4,
+      "n": 1,
+      "max_q": 0,
+      "residuals": 0,
+      "repairs": 0,
+      "entries": 10,
+      "maximum_norm_scaled_error": 0.0
+    }
+  ],
+  "entries": 1038
+}

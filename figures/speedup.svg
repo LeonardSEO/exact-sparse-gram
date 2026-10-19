@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="390" viewBox="0 0 1080 390" role="img" aria-label="Measured SYRK over sequential speedup including losses">
+<rect width="1080" height="390" rx="12" fill="#f7fafc"/>
+<g font-family="Arial, sans-serif" fill="#142b40">
+<text x="35" y="33" font-size="21" font-weight="700">Exact sparse Gram: measured speedup over Accelerate SYRK</text>
+<text x="35" y="58" font-size="14">Full output · original frozen data · markers: median; bars: observed range across 10 runs</text>
+<text x="185" y="95" text-anchor="middle" font-size="18" font-weight="700">192 × 768</text>
+<path d="M65 310h260" stroke="#d9e2ec"/>
+<text x="53" y="315" text-anchor="end" font-size="13">0×</text>
+<path d="M65 250h260" stroke="#64748b" stroke-dasharray="5 4"/>
+<text x="53" y="255" text-anchor="end" font-size="13">1×</text>
+<path d="M65 190h260" stroke="#d9e2ec"/>
+<text x="53" y="195" text-anchor="end" font-size="13">2×</text>
+<path d="M65 130h260" stroke="#d9e2ec"/>
+<text x="53" y="135" text-anchor="end" font-size="13">3×</text>
+<path d="M105 269.58991050459247V268.5374762235359M98 269.58991050459247h14M98 268.5374762235359h14" stroke="#086b8a" stroke-width="2"/>
+<rect x="100" y="263.95934668708617" width="10" height="10" fill="#086b8a"/><text x="105" y="255.95934668708617" text-anchor="middle" font-size="13">0.68×</text>
+<text x="105" y="333" text-anchor="middle" font-size="14">q = 1</text>
+<path d="M190 274.4541057447944V273.2576573049334M183 274.4541057447944h14M183 273.2576573049334h14" stroke="#086b8a" stroke-width="2"/>
+<rect x="185" y="268.5385067285514" width="10" height="10" fill="#086b8a"/><text x="190" y="260.5385067285514" text-anchor="middle" font-size="13">0.61×</text>
+<text x="190" y="333" text-anchor="middle" font-size="14">q = 2</text>
+<path d="M275 280.64973574354553V279.607520518966M268 280.64973574354553h14M268 279.607520518966h14" stroke="#086b8a" stroke-width="2"/>
+<rect x="270" y="275.19110602149584" width="10" height="10" fill="#086b8a"/><text x="275" y="267.19110602149584" text-anchor="middle" font-size="13">0.50×</text>
+<text x="275" y="333" text-anchor="middle" font-size="14">q = 4</text>
+<text x="535" y="95" text-anchor="middle" font-size="18" font-weight="700">384 × 2048</text>
+<path d="M415 310h260" stroke="#d9e2ec"/>
+<text x="403" y="315" text-anchor="end" font-size="13">0×</text>
+<path d="M415 250h260" stroke="#64748b" stroke-dasharray="5 4"/>
+<text x="403" y="255" text-anchor="end" font-size="13">1×</text>
+<path d="M415 190h260" stroke="#d9e2ec"/>
+<text x="403" y="195" text-anchor="end" font-size="13">2×</text>
+<path d="M415 130h260" stroke="#d9e2ec"/>
+<text x="403" y="135" text-anchor="end" font-size="13">3×</text>
+<path d="M455 238.1963240647592V233.37177729064226M448 238.1963240647592h14M448 233.37177729064226h14" stroke="#086b8a" stroke-width="2"/>
+<rect x="450" y="232.7851009072842" width="10" height="10" fill="#086b8a"/><text x="455" y="224.7851009072842" text-anchor="middle" font-size="13">1.20×</text>
+<text x="455" y="333" text-anchor="middle" font-size="14">q = 1</text>
+<path d="M540 243.86600987859896V241.27474761070204M533 243.86600987859896h14M533 241.27474761070204h14" stroke="#086b8a" stroke-width="2"/>
+<rect x="535" y="238.0231980877387" width="10" height="10" fill="#086b8a"/><text x="540" y="230.0231980877387" text-anchor="middle" font-size="13">1.12×</text>
+<text x="540" y="333" text-anchor="middle" font-size="14">q = 2</text>
+<path d="M625 252.90807344899093V251.74081032817207M618 252.90807344899093h14M618 251.74081032817207h14" stroke="#086b8a" stroke-width="2"/>
+<rect x="620" y="247.50729087654327" width="10" height="10" fill="#086b8a"/><text x="625" y="239.50729087654327" text-anchor="middle" font-size="13">0.96×</text>
+<text x="625" y="333" text-anchor="middle" font-size="14">q = 4</text>
+<text x="885" y="95" text-anchor="middle" font-size="18" font-weight="700">768 × 8192</text>
+<path d="M765 310h260" stroke="#d9e2ec"/>
+<text x="753" y="315" text-anchor="end" font-size="13">0×</text>
+<path d="M765 250h260" stroke="#64748b" stroke-dasharray="5 4"/>
+<text x="753" y="255" text-anchor="end" font-size="13">1×</text>
+<path d="M765 190h260" stroke="#d9e2ec"/>
+<text x="753" y="195" text-anchor="end" font-size="13">2×</text>
+<path d="M765 130h260" stroke="#d9e2ec"/>
+<text x="753" y="135" text-anchor="end" font-size="13">3×</text>
+<path d="M805 164.9227051881209V139.6157070358492M798 164.9227051881209h14M798 139.6157070358492h14" stroke="#086b8a" stroke-width="2"/>
+<rect x="800" y="156.35243291527243" width="10" height="10" fill="#086b8a"/><text x="805" y="148.35243291527243" text-anchor="middle" font-size="13">2.48×</text>
+<text x="805" y="333" text-anchor="middle" font-size="14">q = 1</text>
+<path d="M890 194.9602094654053V169.13294907682752M883 194.9602094654053h14M883 169.13294907682752h14" stroke="#086b8a" stroke-width="2"/>
+<rect x="885" y="175.05773080294398" width="10" height="10" fill="#086b8a"/><text x="890" y="167.05773080294398" text-anchor="middle" font-size="13">2.17×</text>
+<text x="890" y="333" text-anchor="middle" font-size="14">q = 2</text>
+<path d="M975 213.24572769148534V154.63632589582332M968 213.24572769148534h14M968 154.63632589582332h14" stroke="#086b8a" stroke-width="2"/>
+<rect x="970" y="196.31762920683013" width="10" height="10" fill="#086b8a"/><text x="975" y="188.31762920683013" text-anchor="middle" font-size="13">1.81×</text>
+<text x="975" y="333" text-anchor="middle" font-size="14">q = 4</text>
+<text x="35" y="371" font-size="14">Apple M4 · binary64 · 1 thread · complete calls including admission, allocation and symmetric output</text>
+</g></svg>

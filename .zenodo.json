@@ -1,0 +1,11 @@
+{
+  "title": "Exact Gram Matrices from Sparse Row Shifts by Sequential Factor Replacement",
+  "upload_type": "software",
+  "description": "Version 1.0.0 research artifact: sequential factor-replacement schedule, exact binary64 invariant, validated C implementation, Lean proof, independent integer-oracle checks, manuscript and all 230 frozen six-method comparisons. Code and Lean are MIT licensed; paper, documentation and data are CC BY 4.0. See LICENSES/README.md for scope.",
+  "creators": [{"name": "van Hemert, Leonard"}],
+  "version": "1.0.0",
+  "publication_date": "2026-10-19",
+  "access_right": "open",
+  "license": "cc-by-4.0",
+  "keywords": ["Gram matrix", "exact floating-point arithmetic", "sparse displacement", "formal verification", "reproducible research"]
+}

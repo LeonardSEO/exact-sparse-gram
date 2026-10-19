@@ -1,0 +1,307 @@
+{"pass": true, "cases": 560, "exact_dyadic_entries": 149600, "max_norm_scaled_error": 1.9737298197176606e-16, "oracle": "Fraction exact products/sums; compare squared error to tau^2 * exact squared row norms", "seed": 20261102}
+{
+  "exact_integer_cases": 132,
+  "lower_entries": 17435,
+  "upper_triangle_and_guards": "passed",
+  "unsupported_dimension": "rejects without writes",
+  "timing": "none"
+}
+{"status": "PASS", "output": "/Users/leonard/Downloads/onderzoek_drie_problemen/gram_research/verification/previous_identity_certificate.json", "exact_zero_residuals": 9, "block_substitution": "REFUTED", "binary64_cancellation_examples": 4, "old_candidate_over_baseline": 1.2088068006285841}
+{
+  "status": "PASS",
+  "exact_fraction_cases": 720,
+  "scope": "reference correctness; no timings; algebra is a Winograd specialization",
+  "balanced_dyadic_examples": [
+    {
+      "k": 27,
+      "balanced": [
+        [
+          2.0,
+          268435456.0
+        ],
+        [
+          268435456.0,
+          3.602879701896397e+16
+        ]
+      ],
+      "direct": [
+        [
+          2.0,
+          268435456.0
+        ],
+        [
+          268435456.0,
+          3.602879701896397e+16
+        ]
+      ]
+    },
+    {
+      "k": 40,
+      "balanced": [
+        [
+          2.0,
+          2199023255552.0
+        ],
+        [
+          2199023255552.0,
+          2.4178516392292583e+24
+        ]
+      ],
+      "direct": [
+        [
+          2.0,
+          2199023255552.0
+        ],
+        [
+          2199023255552.0,
+          2.4178516392292583e+24
+        ]
+      ]
+    },
+    {
+      "k": 100,
+      "balanced": [
+        [
+          2.0,
+          2.535301200456459e+30
+        ],
+        [
+          2.535301200456459e+30,
+          3.2138760885179806e+60
+        ]
+      ],
+      "direct": [
+        [
+          2.0,
+          2.535301200456459e+30
+        ],
+        [
+          2.535301200456459e+30,
+          3.2138760885179806e+60
+        ]
+      ]
+    },
+    {
+      "k": 400,
+      "balanced": [
+        [
+          2.0,
+          5.164499756173817e+120
+        ],
+        [
+          5.164499756173817e+120,
+          1.333602886575971e+241
+        ]
+      ],
+      "direct": [
+        [
+          2.0,
+          5.164499756173817e+120
+        ],
+        [
+          5.164499756173817e+120,
+          1.333602886575971e+241
+        ]
+      ]
+    }
+  ]
+}
+{
+  "certificate_type": "ordered formal monomial identities plus exact rational checks",
+  "proof_scope": "analytic all-dimension proof in notes/algebra.md; finite code checks below",
+  "sparse_noncommutative_local_identities": 2112,
+  "hankel_anchored_formal_output_entries": 374400,
+  "exact_rational_matrices_anchor_pairs": 1200,
+  "exact_rational_output_entries": 42504,
+  "compile_command": [
+    "cc",
+    "-O3",
+    "-std=c11",
+    "-fno-fast-math",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-shared",
+    "-fPIC",
+    "/Users/leonard/Downloads/onderzoek_drie_problemen/gram_research/src/algebra_hankel.c",
+    "/Users/leonard/Downloads/onderzoek_drie_problemen/gram_research/src/algebra_sparse.c",
+    "-lm",
+    "-o",
+    "TEMP_LIBRARY"
+  ],
+  "compiled_C_exact_integer_calls": 1440,
+  "compiled_C_exact_integer_output_entries": 94224,
+  "padding_upper_triangle_and_rejection_checks": "pass",
+  "sha256": {
+    "verification/algebra_verify.py": "2917a529ebf1eb749e53ce827e8e3b637a9064ef11b895e140b5e036a023dd0f",
+    "src/algebra_hankel.c": "53a7e2b2b6da99c7e68e035c64061c3cc7453bd25990182f9342448c6fed6905",
+    "src/algebra_sparse.c": "ded6df9224b59148c39996fccda5708350a03b7b921db095510056b9bb50e773"
+  }
+}
+{"status": "all exact comparisons passed", "cases": 13, "entries": 1349, "maximum_norm_scaled_error": 3.538738907161542e-16, "adaptive_repairs": 21}
+{"status": "all exact comparisons passed", "cases": 7, "entries": 1038, "maximum_norm_scaled_error": 5.780187273240178e-16, "repairs": 21}
+{"status": "all exact comparisons passed", "cases": 25, "entries": 1308, "maximum_norm_scaled_error": 8.670049200105568e-16, "repairs": 21}
+{"status": "all exact comparisons passed", "cases": 14, "entries": 1469, "maximum_norm_scaled_error": 3.538738907161542e-16, "adaptive_repairs": 21}
+{"status": "all exact comparisons passed", "cases": 14, "entries": 1469, "maximum_norm_scaled_error": 3.538738907161542e-16, "adaptive_repairs": 21}
+{
+  "checker": "independent exact Fraction expansion of ordered coefficient basis",
+  "certificates": [
+    {
+      "file": "external/flip-cpd/data/schemes_paper/gt-333-rank17-rec-0-0-0-z.txt",
+      "sha256": "a121567d18830dd08cd08c0bd18bd11cb817498321b0ef5198279f323d9d76f5",
+      "domain": "Q coefficients; every associative Q-algebra after ordered-factor substitution",
+      "ordered_tensor_coefficients_checked": 486,
+      "coefficient_identity": true,
+      "discrepancies": [],
+      "products": 17,
+      "gram_recursive_terms": 0,
+      "input_additions_unshared": 74,
+      "output_additions_unshared": 33,
+      "max_abs_input_coefficient": "10",
+      "max_input_form_l1": "29",
+      "max_output_terms": 11
+    },
+    {
+      "file": "external/flip-cpd/data/schemes_paper/gt-333-rank17-rec-3-0-0-q.txt",
+      "sha256": "30d39f301ddc8969dd9209c75b94874dfeae2b418b30aa275d5b0123a55d6884",
+      "domain": "Q coefficients; every associative Q-algebra after ordered-factor substitution",
+      "ordered_tensor_coefficients_checked": 486,
+      "coefficient_identity": true,
+      "discrepancies": [],
+      "products": 17,
+      "gram_recursive_terms": 3,
+      "input_additions_unshared": 35,
+      "output_additions_unshared": 29,
+      "max_abs_input_coefficient": "2",
+      "max_input_form_l1": "7",
+      "max_output_terms": 7
+    },
+    {
+      "file": "external/flip-cpd/data/schemes_paper/gt-333-rank17-rec-9-0-0-z.txt",
+      "sha256": "95091bbdf2a930236fa46e26c98e03dee1f62c8e923cae83c86b0abcc9352b33",
+      "domain": "Q coefficients; every associative Q-algebra after ordered-factor substitution",
+      "ordered_tensor_coefficients_checked": 486,
+      "coefficient_identity": true,
+      "discrepancies": [],
+      "products": 17,
+      "gram_recursive_terms": 9,
+      "input_additions_unshared": 34,
+      "output_additions_unshared": 24,
+      "max_abs_input_coefficient": "2",
+      "max_input_form_l1": "7",
+      "max_output_terms": 7
+    },
+    {
+      "file": "external/flip-cpd/data/schemes_paper/gt-444-rank34-rec-1-0-0-q.txt",
+      "sha256": "2ffbec803a6529dca61d2b3bddd13bca3c3ff68fbbe82ba050d0538e165dbbb1",
+      "domain": "Q coefficients; every associative Q-algebra after ordered-factor substitution",
+      "ordered_tensor_coefficients_checked": 2560,
+      "coefficient_identity": true,
+      "discrepancies": [],
+      "products": 34,
+      "gram_recursive_terms": 1,
+      "input_additions_unshared": 169,
+      "output_additions_unshared": 94,
+      "max_abs_input_coefficient": "8",
+      "max_input_form_l1": "157/4",
+      "max_output_terms": 16
+    },
+    {
+      "file": "external/flip-cpd/data/schemes_paper/gt-444-rank34-rec-4-0-0-z.txt",
+      "sha256": "6da6aeb7595055353d42d9619053515d36e7dcfdc24a7b66de5c975b82292459",
+      "domain": "Q coefficients; every associative Q-algebra after ordered-factor substitution",
+      "ordered_tensor_coefficients_checked": 2560,
+      "coefficient_identity": true,
+      "discrepancies": [],
+      "products": 34,
+      "gram_recursive_terms": 4,
+      "input_additions_unshared": 163,
+      "output_additions_unshared": 60,
+      "max_abs_input_coefficient": "3",
+      "max_input_form_l1": "11",
+      "max_output_terms": 9
+    },
+    {
+      "file": "external/flip-cpd/data/schemes_paper/gt-444c-rank26-rec-2-0-0-z-4.txt",
+      "sha256": "abdff1ed92386801ad785f34c0e8f81501d168a28954f8d553fca90c06205d7e",
+      "domain": "Q coefficients; every associative Q-algebra after ordered-factor substitution",
+      "ordered_tensor_coefficients_checked": 2560,
+      "coefficient_identity": true,
+      "discrepancies": [],
+      "products": 26,
+      "gram_recursive_terms": 2,
+      "input_additions_unshared": 158,
+      "output_additions_unshared": 52,
+      "max_abs_input_coefficient": "2",
+      "max_input_form_l1": "11",
+      "max_output_terms": 8,
+      "completed_rank": 34,
+      "completed_gram_calls": 10
+    },
+    {
+      "file": "external/flip-cpd/data/schemes_paper/gt-555-rank63-rec-1-0-0-z.txt",
+      "sha256": "9dbd7ef17d15abd2303e66e2676780ec7e2524ae18ffe5e1be0d4b17476c5363",
+      "domain": "Q coefficients; every associative Q-algebra after ordered-factor substitution",
+      "ordered_tensor_coefficients_checked": 9375,
+      "coefficient_identity": true,
+      "discrepancies": [],
+      "products": 63,
+      "gram_recursive_terms": 1,
+      "input_additions_unshared": 400,
+      "output_additions_unshared": 172,
+      "max_abs_input_coefficient": "2",
+      "max_input_form_l1": "17",
+      "max_output_terms": 25
+    },
+    {
+      "file": "external/flip-cpd/data/schemes_paper/gt-555-rank74-rec-6-0-0-q.txt",
+      "sha256": "1382df05c10f6f9a4152d69d32627b64b0732bcbb1c3487a785f96132de24e56",
+      "domain": "Q coefficients; every associative Q-algebra after ordered-factor substitution",
+      "ordered_tensor_coefficients_checked": 9375,
+      "coefficient_identity": true,
+      "discrepancies": [],
+      "products": 74,
+      "gram_recursive_terms": 6,
+      "input_additions_unshared": 128,
+      "output_additions_unshared": 111,
+      "max_abs_input_coefficient": "4",
+      "max_input_form_l1": "10",
+      "max_output_terms": 12
+    }
+  ]
+}
+{
+  "source": "https://arxiv.org/src/2511.10786v2",
+  "source_local": "external/flip-paper-v2/schemes/gt-444.tex",
+  "source_sha256": "fa1fc72a9bc721da96d6aa37a9a0fb25dac56bd4dbefe102e323bd10c42c1ff3",
+  "certificate": "verification/flip_paper_v2_gt444.txt",
+  "certificate_sha256": "48504f9205dfa6a4554068fd777ba684c19a8f68da0df7883dc70bfbea91af60",
+  "ordered_tensor_coefficient_check": true,
+  "coefficient_count": 2560,
+  "diagonal_only_products": [
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34
+  ],
+  "diagonal_only_product_count": 12,
+  "products": 34,
+  "gram_recursive_terms": 8,
+  "input_additions_unshared": 82,
+  "output_additions_unshared": 58,
+  "max_abs_input_coefficient": "1",
+  "max_input_form_l1": "6",
+  "max_output_terms": 8
+}
+Passed 18 exact independent-pair and 18 Gram execution cases.
+{"status": "all exact comparisons and rejection checks passed", "source_sha256": "3402d7c6531fdb17178493df4205b54aaa580fcc6f6d99aa3a66cffa3e3da540", "entries_per_implementation": 34394, "timing": "none: correctness only; no timers or vendor calls"}
+{"status": "all exact comparisons and rejection checks passed", "source_sha256": "d1400c003886f0e57102e75bb7e442b7329cbad26d6d796b844b9bf877f1ba95", "entries_per_implementation": 1562, "timing": "none: correctness only; no timers or vendor calls"}
+{"status": "all sequential exact comparisons and rejection checks passed", "source_sha256": "7550990a7f6dd82fbd0e58580c9a6639eef7ffc07d841b56ae9cf189b394bde5", "entries_per_implementation": 2044, "timing": "none: correctness only; no timers or vendor calls"}

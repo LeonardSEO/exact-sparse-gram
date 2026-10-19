@@ -1,0 +1,341 @@
+{
+  "status": "all exact comparisons and rejection checks passed",
+  "source_sha256": "3402d7c6531fdb17178493df4205b54aaa580fcc6f6d99aa3a66cffa3e3da540",
+  "timing": "none: correctness only; no timers or vendor calls",
+  "reference": "independent Python integer dot products and exact Fraction scaling",
+  "implementations": [
+    "native (NEON on arm64)",
+    "forced scalar"
+  ],
+  "compiler_commands": [
+    [
+      "clang",
+      "-O3",
+      "-std=c11",
+      "-fno-fast-math",
+      "-ffp-contract=off",
+      "-Wall",
+      "-Wextra",
+      "-Wconversion",
+      "-Werror",
+      "-dynamiclib",
+      "/Users/leonard/Downloads/onderzoek_drie_problemen/gram_research/src/lattice_exact.c",
+      "-o",
+      "/Users/leonard/Downloads/onderzoek_drie_problemen/gram_research/verification/lattice_exact_native.dylib"
+    ],
+    [
+      "clang",
+      "-DLATTICE_EXACT_SCALAR",
+      "-O3",
+      "-std=c11",
+      "-fno-fast-math",
+      "-ffp-contract=off",
+      "-Wall",
+      "-Wextra",
+      "-Wconversion",
+      "-Werror",
+      "-dynamiclib",
+      "/Users/leonard/Downloads/onderzoek_drie_problemen/gram_research/src/lattice_exact.c",
+      "-o",
+      "/Users/leonard/Downloads/onderzoek_drie_problemen/gram_research/verification/lattice_exact_scalar.dylib"
+    ]
+  ],
+  "algebra_certificate": {
+    "ordered_word_identity": "passed",
+    "monomials": 4,
+    "exhaustive_n2_B1_coefficient_cases": 729,
+    "scope": "algebra certificates and finite bound samples; analytical proof in notes"
+  },
+  "cases": [
+    {
+      "name": "all_vector_tails_n1",
+      "m": 7,
+      "n": 1,
+      "scale_exp": -17,
+      "max_q": 0,
+      "entries_per_implementation": 28
+    },
+    {
+      "name": "all_vector_tails_n2",
+      "m": 7,
+      "n": 2,
+      "scale_exp": 0,
+      "max_q": 1,
+      "entries_per_implementation": 28
+    },
+    {
+      "name": "all_vector_tails_n3",
+      "m": 7,
+      "n": 3,
+      "scale_exp": 200,
+      "max_q": 2,
+      "entries_per_implementation": 28
+    },
+    {
+      "name": "all_vector_tails_n4",
+      "m": 7,
+      "n": 4,
+      "scale_exp": -400,
+      "max_q": 2,
+      "entries_per_implementation": 28
+    },
+    {
+      "name": "all_vector_tails_n5",
+      "m": 7,
+      "n": 5,
+      "scale_exp": -17,
+      "max_q": 2,
+      "entries_per_implementation": 28
+    },
+    {
+      "name": "all_vector_tails_n6",
+      "m": 7,
+      "n": 6,
+      "scale_exp": 0,
+      "max_q": 2,
+      "entries_per_implementation": 28
+    },
+    {
+      "name": "all_vector_tails_n7",
+      "m": 7,
+      "n": 7,
+      "scale_exp": 200,
+      "max_q": 2,
+      "entries_per_implementation": 28
+    },
+    {
+      "name": "all_vector_tails_n8",
+      "m": 7,
+      "n": 8,
+      "scale_exp": -400,
+      "max_q": 2,
+      "entries_per_implementation": 28
+    },
+    {
+      "name": "all_vector_tails_n9",
+      "m": 7,
+      "n": 9,
+      "scale_exp": -17,
+      "max_q": 2,
+      "entries_per_implementation": 28
+    },
+    {
+      "name": "all_vector_tails_n10",
+      "m": 7,
+      "n": 10,
+      "scale_exp": 0,
+      "max_q": 2,
+      "entries_per_implementation": 28
+    },
+    {
+      "name": "all_vector_tails_n11",
+      "m": 7,
+      "n": 11,
+      "scale_exp": 200,
+      "max_q": 2,
+      "entries_per_implementation": 28
+    },
+    {
+      "name": "all_vector_tails_n12",
+      "m": 7,
+      "n": 12,
+      "scale_exp": -400,
+      "max_q": 2,
+      "entries_per_implementation": 28
+    },
+    {
+      "name": "all_vector_tails_n13",
+      "m": 7,
+      "n": 13,
+      "scale_exp": -17,
+      "max_q": 2,
+      "entries_per_implementation": 28
+    },
+    {
+      "name": "all_vector_tails_n14",
+      "m": 7,
+      "n": 14,
+      "scale_exp": 0,
+      "max_q": 2,
+      "entries_per_implementation": 28
+    },
+    {
+      "name": "all_vector_tails_n15",
+      "m": 7,
+      "n": 15,
+      "scale_exp": 200,
+      "max_q": 2,
+      "entries_per_implementation": 28
+    },
+    {
+      "name": "all_vector_tails_n16",
+      "m": 7,
+      "n": 16,
+      "scale_exp": -400,
+      "max_q": 2,
+      "entries_per_implementation": 28
+    },
+    {
+      "name": "all_vector_tails_n17",
+      "m": 7,
+      "n": 17,
+      "scale_exp": -17,
+      "max_q": 2,
+      "entries_per_implementation": 28
+    },
+    {
+      "name": "q0_endpoint_e-400",
+      "m": 13,
+      "n": 23,
+      "scale_exp": -400,
+      "max_q": 0,
+      "entries_per_implementation": 91
+    },
+    {
+      "name": "q0_endpoint_e-399",
+      "m": 13,
+      "n": 23,
+      "scale_exp": -399,
+      "max_q": 0,
+      "entries_per_implementation": 91
+    },
+    {
+      "name": "q0_endpoint_e-1",
+      "m": 13,
+      "n": 23,
+      "scale_exp": -1,
+      "max_q": 0,
+      "entries_per_implementation": 91
+    },
+    {
+      "name": "q0_endpoint_e0",
+      "m": 13,
+      "n": 23,
+      "scale_exp": 0,
+      "max_q": 0,
+      "entries_per_implementation": 91
+    },
+    {
+      "name": "q0_endpoint_e1",
+      "m": 13,
+      "n": 23,
+      "scale_exp": 1,
+      "max_q": 0,
+      "entries_per_implementation": 91
+    },
+    {
+      "name": "q0_endpoint_e199",
+      "m": 13,
+      "n": 23,
+      "scale_exp": 199,
+      "max_q": 0,
+      "entries_per_implementation": 91
+    },
+    {
+      "name": "q0_endpoint_e200",
+      "m": 13,
+      "n": 23,
+      "scale_exp": 200,
+      "max_q": 0,
+      "entries_per_implementation": 91
+    },
+    {
+      "name": "max_defects_q1",
+      "m": 5,
+      "n": 65,
+      "scale_exp": -400,
+      "max_q": 1,
+      "entries_per_implementation": 15
+    },
+    {
+      "name": "max_defects_q2",
+      "m": 5,
+      "n": 65,
+      "scale_exp": -400,
+      "max_q": 2,
+      "entries_per_implementation": 15
+    },
+    {
+      "name": "max_defects_q4",
+      "m": 5,
+      "n": 65,
+      "scale_exp": -400,
+      "max_q": 4,
+      "entries_per_implementation": 15
+    },
+    {
+      "name": "max_defects_q64",
+      "m": 5,
+      "n": 65,
+      "scale_exp": -400,
+      "max_q": 64,
+      "entries_per_implementation": 15
+    },
+    {
+      "name": "maximum_residual_65536",
+      "m": 2,
+      "n": 9,
+      "scale_exp": 200,
+      "max_q": 8,
+      "entries_per_implementation": 3
+    },
+    {
+      "name": "long_recurrence_chain",
+      "m": 257,
+      "n": 3,
+      "scale_exp": 0,
+      "max_q": 1,
+      "entries_per_implementation": 33153
+    },
+    {
+      "name": "zero_rows",
+      "m": 7,
+      "n": 9,
+      "scale_exp": -400,
+      "max_q": 0,
+      "entries_per_implementation": 28
+    },
+    {
+      "name": "all_negative_boundary",
+      "m": 6,
+      "n": 8,
+      "scale_exp": 200,
+      "max_q": 0,
+      "entries_per_implementation": 21
+    },
+    {
+      "name": "maximum_n_single_anchor",
+      "m": 1,
+      "n": 65536,
+      "scale_exp": -400,
+      "max_q": 64,
+      "entries_per_implementation": 1
+    },
+    {
+      "name": "n1_independent_rows",
+      "m": 5,
+      "n": 1,
+      "scale_exp": 200,
+      "max_q": 0,
+      "entries_per_implementation": 15
+    }
+  ],
+  "entries_per_implementation": 34394,
+  "rejection_and_boundary_classes": [
+    "+infinity",
+    "-infinity",
+    "NaN",
+    "actual defect count exceeds caller cap",
+    "coefficient above cap",
+    "half integer",
+    "half lattice step",
+    "invalid scalar parameters/pointers/strides/extent",
+    "m=0 unconditional no-op",
+    "n=0 lower zeros and preserved upper/padding",
+    "negative coefficient below cap",
+    "one ulp beyond bound",
+    "one ulp off lattice",
+    "scaling underflows to zero",
+    "smallest subnormal"
+  ]
+}

@@ -1,0 +1,16 @@
+.DS_Store
+/build/
+**/__pycache__/
+*.pyc
+/lean/.lake/
+/benchmarks/specialized/build/
+/benchmarks/round2/build/
+*.o
+*.a
+/paper.aux
+/paper.bbl
+/paper.blg
+/paper.log
+/paper.out
+/paper.xdv
+/dist/

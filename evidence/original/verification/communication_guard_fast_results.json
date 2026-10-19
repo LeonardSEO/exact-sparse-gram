@@ -1,0 +1,125 @@
+{
+  "reference": "exact Fraction.from_float dyadic products and sums",
+  "comparison": "error^2 <= tol_binary64^2 * exact_row_square_i * exact_row_square_j",
+  "tolerance": 2e-12,
+  "old_candidate": {
+    "old_five_product_g11": 0.0,
+    "exact_g11": 2
+  },
+  "cases": [
+    {
+      "name": "bounded_1_1",
+      "m": 1,
+      "n": 1,
+      "entries": 1,
+      "repairs": 0,
+      "maximum_norm_scaled_error": 7.873838175690956e-17
+    },
+    {
+      "name": "bounded_2_1",
+      "m": 2,
+      "n": 1,
+      "entries": 3,
+      "repairs": 0,
+      "maximum_norm_scaled_error": 1.2021383339443533e-16
+    },
+    {
+      "name": "bounded_7_3",
+      "m": 7,
+      "n": 3,
+      "entries": 28,
+      "repairs": 0,
+      "maximum_norm_scaled_error": 2.2191950992265762e-16
+    },
+    {
+      "name": "bounded_9_17",
+      "m": 9,
+      "n": 17,
+      "entries": 45,
+      "repairs": 0,
+      "maximum_norm_scaled_error": 3.538738907161542e-16
+    },
+    {
+      "name": "bounded_13_31",
+      "m": 13,
+      "n": 31,
+      "entries": 91,
+      "repairs": 0,
+      "maximum_norm_scaled_error": 3.3999769521665663e-16
+    },
+    {
+      "name": "bounded_16_128",
+      "m": 16,
+      "n": 128,
+      "entries": 136,
+      "repairs": 0,
+      "maximum_norm_scaled_error": 2.7597485902802327e-16
+    },
+    {
+      "name": "all_zero",
+      "m": 15,
+      "n": 33,
+      "entries": 120,
+      "repairs": 0,
+      "maximum_norm_scaled_error": 0.0
+    },
+    {
+      "name": "near_dependent",
+      "m": 15,
+      "n": 33,
+      "entries": 120,
+      "repairs": 0,
+      "maximum_norm_scaled_error": 6.728624397744239e-18
+    },
+    {
+      "name": "alternating",
+      "m": 15,
+      "n": 33,
+      "entries": 120,
+      "repairs": 0,
+      "maximum_norm_scaled_error": 0.0
+    },
+    {
+      "name": "impulses",
+      "m": 15,
+      "n": 33,
+      "entries": 120,
+      "repairs": 0,
+      "maximum_norm_scaled_error": 0.0
+    },
+    {
+      "name": "wide_dyadic",
+      "m": 15,
+      "n": 33,
+      "entries": 120,
+      "repairs": 0,
+      "maximum_norm_scaled_error": 1.7426663616821932e-120
+    },
+    {
+      "name": "domain_endpoints",
+      "m": 15,
+      "n": 33,
+      "entries": 120,
+      "repairs": 0,
+      "maximum_norm_scaled_error": 0.0
+    },
+    {
+      "name": "cancellation",
+      "m": 15,
+      "n": 33,
+      "entries": 120,
+      "repairs": 0,
+      "maximum_norm_scaled_error": 5.366162204393473e-17
+    },
+    {
+      "name": "huge_impulse_leaves_window",
+      "m": 25,
+      "n": 8,
+      "entries": 325,
+      "repairs": 21,
+      "maximum_norm_scaled_error": 1.9523311342315753e-30
+    }
+  ],
+  "entries": 1469,
+  "status": "all exact comparisons passed"
+}

@@ -1,0 +1,163 @@
+{
+  "checked_at_utc": "2026-10-19T12:23:37.100094+00:00",
+  "author": "Leonard van Hemert",
+  "license": "MIT",
+  "lean_version": "Lean (version 4.24.0, arm64-apple-darwin23.6.0, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)",
+  "lake_version": "Lake version 5.0.0-src+797c613 (Lean version 4.24.0)",
+  "commands": [
+    {
+      "command": "lake build",
+      "exit_code": 0,
+      "output": "evidence/build.log"
+    },
+    {
+      "command": "lake env lean evidence/Inspect.lean",
+      "exit_code": 0,
+      "output": "evidence/types-and-axioms.txt"
+    }
+  ],
+  "source_sha256": {
+    "lean-toolchain": "42779d67b81608af8a12aa4328d2ab47ca201925b3b2bd68369587b5340bb434",
+    "lakefile.toml": "f4ef89e36ba9acb00165f75222dc59d448077c51aeb96a518b5afc02e8ffb221",
+    "lake-manifest.json": "bc7efed4f94db0cd5c19025548628c64ca89c71f5f5740076aeb5343a0634e55",
+    "GramExact.lean": "3a86f326cee0ed4f5cf98619a5f1174384f6cf71d4d9b9b5aa9b6cb4872d57a8",
+    "GramExact/Arithmetic.lean": "ae9c94dd0659c13eeef809480e0efce707f0989c76aaee4e7a4602e91bd0f8d0",
+    "GramExact/Bounds.lean": "774f935eb28af21629aeb89a3d8f71d3ef5fb4751acb4f8c8cd9ec671a89946a",
+    "GramExact/Bridge.lean": "d8dde15da0889422c140d90991fcbe01a9816dce47aac334d5ff159a8467bb67",
+    "GramExact/Core.lean": "3b8db566cc56a0632d65061dcfa51ea5471d47a5c1dc94e9f6030bfdd63f2527",
+    "evidence/Inspect.lean": "ac340ba85113a2de349011c689450081978e4a134c66a707dcb7be22465159aa"
+  },
+  "dependencies": [
+    {
+      "url": "https://github.com/leanprover-community/mathlib4.git",
+      "type": "git",
+      "subDir": null,
+      "scope": "",
+      "rev": "f897ebcf72cd16f89ab4577d0c826cd14afaafc7",
+      "name": "mathlib",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "f897ebcf72cd16f89ab4577d0c826cd14afaafc7",
+      "inherited": false,
+      "configFile": "lakefile.lean",
+      "verified_checkout_rev": "f897ebcf72cd16f89ab4577d0c826cd14afaafc7"
+    },
+    {
+      "url": "https://github.com/leanprover-community/plausible",
+      "type": "git",
+      "subDir": null,
+      "scope": "leanprover-community",
+      "rev": "dfd06ebfe8d0e8fa7faba9cb5e5a2e74e7bd2805",
+      "name": "plausible",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "main",
+      "inherited": true,
+      "configFile": "lakefile.toml",
+      "verified_checkout_rev": "dfd06ebfe8d0e8fa7faba9cb5e5a2e74e7bd2805"
+    },
+    {
+      "url": "https://github.com/leanprover-community/LeanSearchClient",
+      "type": "git",
+      "subDir": null,
+      "scope": "leanprover-community",
+      "rev": "99657ad92e23804e279f77ea6dbdeebaa1317b98",
+      "name": "LeanSearchClient",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "main",
+      "inherited": true,
+      "configFile": "lakefile.toml",
+      "verified_checkout_rev": "99657ad92e23804e279f77ea6dbdeebaa1317b98"
+    },
+    {
+      "url": "https://github.com/leanprover-community/import-graph",
+      "type": "git",
+      "subDir": null,
+      "scope": "leanprover-community",
+      "rev": "d768126816be17600904726ca7976b185786e6b9",
+      "name": "importGraph",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "main",
+      "inherited": true,
+      "configFile": "lakefile.toml",
+      "verified_checkout_rev": "d768126816be17600904726ca7976b185786e6b9"
+    },
+    {
+      "url": "https://github.com/leanprover-community/ProofWidgets4",
+      "type": "git",
+      "subDir": null,
+      "scope": "leanprover-community",
+      "rev": "556caed0eadb7901e068131d1be208dd907d07a2",
+      "name": "proofwidgets",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "v0.0.74",
+      "inherited": true,
+      "configFile": "lakefile.lean",
+      "verified_checkout_rev": "556caed0eadb7901e068131d1be208dd907d07a2"
+    },
+    {
+      "url": "https://github.com/leanprover-community/aesop",
+      "type": "git",
+      "subDir": null,
+      "scope": "leanprover-community",
+      "rev": "725ac8cd67acd70a7beaf47c3725e23484c1ef50",
+      "name": "aesop",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "master",
+      "inherited": true,
+      "configFile": "lakefile.toml",
+      "verified_checkout_rev": "725ac8cd67acd70a7beaf47c3725e23484c1ef50"
+    },
+    {
+      "url": "https://github.com/leanprover-community/quote4",
+      "type": "git",
+      "subDir": null,
+      "scope": "leanprover-community",
+      "rev": "dea6a3361fa36d5a13f87333dc506ada582e025c",
+      "name": "Qq",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "master",
+      "inherited": true,
+      "configFile": "lakefile.toml",
+      "verified_checkout_rev": "dea6a3361fa36d5a13f87333dc506ada582e025c"
+    },
+    {
+      "url": "https://github.com/leanprover-community/batteries",
+      "type": "git",
+      "subDir": null,
+      "scope": "leanprover-community",
+      "rev": "8da40b72fece29b7d3fe3d768bac4c8910ce9bee",
+      "name": "batteries",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "main",
+      "inherited": true,
+      "configFile": "lakefile.toml",
+      "verified_checkout_rev": "8da40b72fece29b7d3fe3d768bac4c8910ce9bee"
+    },
+    {
+      "url": "https://github.com/leanprover/lean4-cli",
+      "type": "git",
+      "subDir": null,
+      "scope": "leanprover",
+      "rev": "91c18fa62838ad0ab7384c03c9684d99d306e1da",
+      "name": "Cli",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "main",
+      "inherited": true,
+      "configFile": "lakefile.toml",
+      "verified_checkout_rev": "91c18fa62838ad0ab7384c03c9684d99d306e1da"
+    }
+  ],
+  "cache_note": "Local .lake/packages symlink reuses only dependency/runtime environment from sibling project; no sibling mathematical source imported. The symlink and caches are ignored and are not release inputs.",
+  "axiom_audit": {
+    "principal_declarations": 53,
+    "allowed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "custom_mathematical_axioms": false,
+    "sorryAx": false,
+    "native_decide": false,
+    "checked_reports": 53
+  },
+  "trust_boundary": "Lean kernel and pinned mathlib; Binary64Bridge is an explicit primitive correspondence assumption, not a verified IEEE/C model."
+}
